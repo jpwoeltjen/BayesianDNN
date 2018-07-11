@@ -19,7 +19,7 @@ Transaction costs are configurable in the equity_curve() function. They are curr
 
 The model is fit on the training set. A grid search over the user defined hyper parameters is performed including the profit taking threshold, softmax threshold and Bayesian uncertainty threshold. The models are saved to the disk. The best model and hyperparameters are selected based on the validation set performance. This model is used to predict on the test set providing an unbiased estimate of expected future performance. The testing on the test set is necessary because the act of choosing the best performing model biases the expected future performance based on the validation set upwards. The highest care was taken to prevent any information leakage into the test set. 
 
-As a demonstration the model is fit on the EUR.USD currency pair. A 0.0005 profit taking threshold is tested against a 0.0015 threshold. Each model if fit for 100 epochs. 1000 stochastic forward passes are performed to obtain uncertainty estimates and mean predictions. 
+As a demonstration the model is fit on the EUR.USD currency pair. A 0.0005 profit taking threshold is tested against a 0.001 threshold. Each model if fit for 200 epochs. 1000 stochastic forward passes are performed to obtain uncertainty estimates and mean predictions. 
 
 Selecting the best model based on validation set Sharpe ratio after transaction costs:
 
@@ -62,7 +62,7 @@ average_trade: 2.2571713001966453e-05
 
 The Sharpe ratio of 2.23 is highly statistically significant. After transaction costs the performance is not outstanding but still positive.
 
-To check whether the Bayesian NN improves over a NN with standard dropout the model performance over various forward passes is evaluated:
+To check whether the Bayesian NN improves over a NN with standard dropout the model performance over various numbers of stochastic forward passes T is evaluated:
 
 No dropout at test time
 
