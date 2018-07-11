@@ -23,10 +23,13 @@ As a demonstration the model is fit on the EUR.USD currency pair. A 0.0005 profi
 
 Selecting the best model based on validation set Sharpe ratio after transaction costs:
 
->FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+```
+FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
 return > 1  x std: 
 Percent correct 0.40_sigma: 67.03962960921568 %
-percentage of periods betting up 0.40_sigma : 49.3652649034 %; percentage of periods betting down: 0.40_sigma  49.5229292957 %; percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
+percentage of periods betting up 0.40_sigma : 49.3652649034 %;
+percentage of periods betting down: 0.40_sigma  49.5229292957 %; 
+percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
 There were 15788 total trades for 0.40_sigma.
 The annualised_sharpe for 0.40_sigma. is: 3.61.
 The CAGR for 0.40_sigma. is: 24.72 percent.
@@ -35,14 +38,17 @@ The CAGR for 0.40_sigma. is: 12.76 percent. after commissions
 average_gain: 0.000447643873660592
 average_loss: -0.0007962537265445978
 average_trade: 3.7650617350822874e-05
-
+```
 
 On the test set which ranges from 2015 to 2018, the performance is as follows:
 
->FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+```
+FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
 return > 1  x std: 
 Percent correct 0.40_sigma: 64.33427211809266 %
-percentage of periods betting up 0.40_sigma : 50.0481695568 %; percentage of periods betting down: 0.40_sigma  49.3256262042 %; percentage of periods staying out of the market: 0.40_sigma  0.626204238921 %
+percentage of periods betting up 0.40_sigma : 50.0481695568 %; 
+percentage of periods betting down: 0.40_sigma  49.3256262042 %; 
+percentage of periods staying out of the market: 0.40_sigma  0.626204238921 %
 There were 8838 total trades for 0.40_sigma.
 The annualised_sharpe for 0.40_sigma. is: 2.23.
 The CAGR for 0.40_sigma. is: 14.17 percent.
@@ -51,7 +57,7 @@ The CAGR for 0.40_sigma. is: 3.21 percent. after commissions
 average_gain: 0.0004424762514773753
 average_loss: -0.0007348571815196322
 average_trade: 2.2571713001966453e-05
-
+```
 ![alt text](https://github.com/jpwoeltjen/BayesianDNN/blob/master/Equity_curves/equity_curve_0.40_softmax_1.00_Bayesian_z_score.png)
 
 The Sharpe ratio of 2.23 is highly statistically significant. After transaction costs the performance is not outstanding but still positive.
@@ -60,10 +66,13 @@ To check whether the Bayesian NN improves over a NN with standard dropout the mo
 
 No dropout at test time
 
->FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+```
+FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
 return > 1  x std: 
 Percent correct 0.40_sigma: 64.46369426751592 %
-percentage of periods betting up 0.40_sigma : 40.7851637765 %; percentage of periods betting down: 0.40_sigma  53.9210019268 %; percentage of periods staying out of the market: 0.40_sigma  5.29383429672 %
+percentage of periods betting up 0.40_sigma : 40.7851637765 %; 
+percentage of periods betting down: 0.40_sigma  53.9210019268 %; 
+percentage of periods staying out of the market: 0.40_sigma  5.29383429672 %
 There were 9367 total trades for 0.40_sigma.
 The annualised_sharpe for 0.40_sigma. is: 1.83.
 The CAGR for 0.40_sigma. is: 11.30 percent.
@@ -72,13 +81,17 @@ The CAGR for 0.40_sigma. is: 0.85 percent. after commissions
 average_gain: 0.00044528413854955584
 average_loss: -0.0007537539848906185
 average_trade: 1.91902851548334e-05
+```
 
 Averaging over T = 100
 
->FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+```
+FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
 return > 1  x std: 
 Percent correct 0.40_sigma: 64.19489469086673 %
-percentage of periods betting up 0.40_sigma : 50.2071290944 %; percentage of periods betting down: 0.40_sigma  49.2244701349 %; percentage of periods staying out of the market: 0.40_sigma  0.568400770713 %
+percentage of periods betting up 0.40_sigma : 50.2071290944 %; 
+percentage of periods betting down: 0.40_sigma  49.2244701349 %; 
+percentage of periods staying out of the market: 0.40_sigma  0.568400770713 %
 There were 8827 total trades for 0.40_sigma.
 The annualised_sharpe for 0.40_sigma. is: 2.10.
 The CAGR for 0.40_sigma. is: 13.24 percent.
@@ -87,14 +100,17 @@ The CAGR for 0.40_sigma. is: 2.37 percent. after commissions
 average_gain: 0.00044229780406157527
 average_loss: -0.0007338288879659513
 average_trade: 2.1184403412315518e-05
-
+```
 
 Averaging over T = 5000 
 
->FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+```
+FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
 return > 1  x std: 
 Percent correct 0.40_sigma: 64.39081241198465 %
-percentage of periods betting up 0.40_sigma : 49.9903660886 %; percentage of periods betting down: 0.40_sigma  49.3786127168 %; percentage of periods staying out of the market: 0.40_sigma  0.631021194605 %
+percentage of periods betting up 0.40_sigma : 49.9903660886 %; 
+percentage of periods betting down: 0.40_sigma  49.3786127168 %; 
+percentage of periods staying out of the market: 0.40_sigma  0.631021194605 %
 There were 8818 total trades for 0.40_sigma.
 The annualised_sharpe for 0.40_sigma. is: 2.37.
 The CAGR for 0.40_sigma. is: 15.04 percent.
@@ -103,6 +119,7 @@ The CAGR for 0.40_sigma. is: 4.02 percent. after commissions
 average_gain: 0.0004426380996794876
 average_loss: -0.0007334596160295251
 average_trade: 2.3839257874323972e-05
+```
 
 As can be seen the test performance improves with the number of stochastic forward passes T over which we average the predictive signal. Performing 5000 stochastic passes yields a substantially higher Sharpe ratio than regular prediction (2.37 vs. 1.83).  
 
