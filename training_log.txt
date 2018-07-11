@@ -1,0 +1,1874 @@
+Using TensorFlow backend.
+        var1      var2      var3      var4 ...  return_max  down  flat  up
+1  -0.000222  0.000589  0.000071  0.001170 ...    0.000523     1     0   1
+2   0.001197  0.000199  0.000514 -0.000514 ...    0.001081     0     0   1
+3  -0.000239  0.000319  0.000519  0.000585 ...    0.000620     1     0   1
+4   0.000514  0.000053 -0.000257 -0.000213 ...    0.000638     1     0   1
+5  -0.000372 -0.000354 -0.000518 -0.001098 ...    0.000940     0     0   1
+6  -0.000939 -0.000637 -0.000337 -0.000044 ...    0.001020     0     0   1
+7  -0.000239 -0.000159 -0.000022  0.000213 ...    0.000962     0     0   1
+8   0.000381  0.000323  0.000293  0.000470 ...    0.000408     1     0   0
+9   0.000479 -0.000075  0.000058 -0.000346 ...    0.000377     1     0   0
+10 -0.000040 -0.000071 -0.000421  0.000151 ...    0.001485     0     0   1
+
+[10 rows x 45 columns]
+down/flat/up:
+41057
+10105
+41345
+Train on 36786 samples, validate on 36787 samples
+2018-07-11 09:49:02.662281: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-07-11 09:49:02.662305: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-07-11 09:49:02.662312: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-07-11 09:49:02.662318: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Epoch 1/200
+ - 4s - loss: 1.4605 - acc: 0.3700 - val_loss: 1.2957 - val_acc: 0.4642
+Epoch 2/200
+ - 4s - loss: 1.3322 - acc: 0.4207 - val_loss: 1.2681 - val_acc: 0.4757
+Epoch 3/200
+ - 4s - loss: 1.2933 - acc: 0.4477 - val_loss: 1.2445 - val_acc: 0.4542
+Epoch 4/200
+ - 4s - loss: 1.2636 - acc: 0.4614 - val_loss: 1.2236 - val_acc: 0.4805
+Epoch 5/200
+ - 4s - loss: 1.2397 - acc: 0.4759 - val_loss: 1.2109 - val_acc: 0.4852
+Epoch 6/200
+ - 4s - loss: 1.2196 - acc: 0.4845 - val_loss: 1.1986 - val_acc: 0.4764
+Epoch 7/200
+ - 4s - loss: 1.2030 - acc: 0.4889 - val_loss: 1.1887 - val_acc: 0.4763
+Epoch 8/200
+ - 4s - loss: 1.1886 - acc: 0.4910 - val_loss: 1.1830 - val_acc: 0.4689
+Epoch 9/200
+ - 4s - loss: 1.1773 - acc: 0.4936 - val_loss: 1.1774 - val_acc: 0.4587
+Epoch 10/200
+ - 3s - loss: 1.1666 - acc: 0.4883 - val_loss: 1.1727 - val_acc: 0.4555
+Epoch 11/200
+ - 3s - loss: 1.1593 - acc: 0.4924 - val_loss: 1.1692 - val_acc: 0.4699
+Epoch 12/200
+ - 4s - loss: 1.1516 - acc: 0.4942 - val_loss: 1.1651 - val_acc: 0.4453
+Epoch 13/200
+ - 3s - loss: 1.1454 - acc: 0.4943 - val_loss: 1.1641 - val_acc: 0.4405
+Epoch 14/200
+ - 3s - loss: 1.1409 - acc: 0.4964 - val_loss: 1.1622 - val_acc: 0.4615
+Epoch 15/200
+ - 3s - loss: 1.1358 - acc: 0.4932 - val_loss: 1.1609 - val_acc: 0.4575
+Epoch 16/200
+ - 3s - loss: 1.1315 - acc: 0.4961 - val_loss: 1.1587 - val_acc: 0.4535
+Epoch 17/200
+ - 3s - loss: 1.1281 - acc: 0.4942 - val_loss: 1.1574 - val_acc: 0.4453
+Epoch 18/200
+ - 3s - loss: 1.1252 - acc: 0.4941 - val_loss: 1.1558 - val_acc: 0.4399
+Epoch 19/200
+ - 3s - loss: 1.1228 - acc: 0.4895 - val_loss: 1.1545 - val_acc: 0.4331
+Epoch 20/200
+ - 3s - loss: 1.1192 - acc: 0.4950 - val_loss: 1.1542 - val_acc: 0.4489
+Epoch 21/200
+ - 3s - loss: 1.1179 - acc: 0.4931 - val_loss: 1.1544 - val_acc: 0.4542
+Epoch 22/200
+ - 3s - loss: 1.1165 - acc: 0.4926 - val_loss: 1.1546 - val_acc: 0.4466
+Epoch 23/200
+ - 3s - loss: 1.1138 - acc: 0.4882 - val_loss: 1.1536 - val_acc: 0.4433
+Epoch 24/200
+ - 3s - loss: 1.1132 - acc: 0.4895 - val_loss: 1.1539 - val_acc: 0.4299
+Epoch 25/200
+ - 3s - loss: 1.1129 - acc: 0.4846 - val_loss: 1.1552 - val_acc: 0.4475
+Epoch 26/200
+ - 3s - loss: 1.1103 - acc: 0.4850 - val_loss: 1.1511 - val_acc: 0.4430
+Epoch 27/200
+ - 3s - loss: 1.1100 - acc: 0.4870 - val_loss: 1.1511 - val_acc: 0.4396
+Epoch 28/200
+ - 3s - loss: 1.1097 - acc: 0.4795 - val_loss: 1.1504 - val_acc: 0.4515
+Epoch 29/200
+ - 3s - loss: 1.1082 - acc: 0.4845 - val_loss: 1.1521 - val_acc: 0.4402
+Epoch 30/200
+ - 3s - loss: 1.1074 - acc: 0.4864 - val_loss: 1.1524 - val_acc: 0.4412
+Epoch 31/200
+ - 3s - loss: 1.1062 - acc: 0.4884 - val_loss: 1.1541 - val_acc: 0.4377
+Epoch 32/200
+ - 4s - loss: 1.1052 - acc: 0.4870 - val_loss: 1.1511 - val_acc: 0.4444
+Epoch 33/200
+ - 4s - loss: 1.1050 - acc: 0.4886 - val_loss: 1.1504 - val_acc: 0.4459
+Epoch 34/200
+ - 3s - loss: 1.1044 - acc: 0.4827 - val_loss: 1.1507 - val_acc: 0.4332
+Epoch 35/200
+ - 3s - loss: 1.1028 - acc: 0.4872 - val_loss: 1.1508 - val_acc: 0.4261
+Epoch 36/200
+ - 3s - loss: 1.1035 - acc: 0.4875 - val_loss: 1.1493 - val_acc: 0.4358
+Epoch 37/200
+ - 3s - loss: 1.1025 - acc: 0.4870 - val_loss: 1.1475 - val_acc: 0.4362
+Epoch 38/200
+ - 3s - loss: 1.1017 - acc: 0.4810 - val_loss: 1.1472 - val_acc: 0.4368
+Epoch 39/200
+ - 3s - loss: 1.1023 - acc: 0.4807 - val_loss: 1.1485 - val_acc: 0.4385
+Epoch 40/200
+ - 3s - loss: 1.1013 - acc: 0.4859 - val_loss: 1.1488 - val_acc: 0.4289
+Epoch 41/200
+ - 3s - loss: 1.1010 - acc: 0.4905 - val_loss: 1.1464 - val_acc: 0.4450
+Epoch 42/200
+ - 3s - loss: 1.1006 - acc: 0.4861 - val_loss: 1.1464 - val_acc: 0.4474
+Epoch 43/200
+ - 3s - loss: 1.1005 - acc: 0.4871 - val_loss: 1.1484 - val_acc: 0.4408
+Epoch 44/200
+ - 3s - loss: 1.0993 - acc: 0.4867 - val_loss: 1.1444 - val_acc: 0.4359
+Epoch 45/200
+ - 3s - loss: 1.0990 - acc: 0.4859 - val_loss: 1.1474 - val_acc: 0.4335
+Epoch 46/200
+ - 3s - loss: 1.0992 - acc: 0.4849 - val_loss: 1.1459 - val_acc: 0.4346
+Epoch 47/200
+ - 3s - loss: 1.0984 - acc: 0.4859 - val_loss: 1.1457 - val_acc: 0.4388
+Epoch 48/200
+ - 3s - loss: 1.0988 - acc: 0.4879 - val_loss: 1.1439 - val_acc: 0.4335
+Epoch 49/200
+ - 3s - loss: 1.0977 - acc: 0.4849 - val_loss: 1.1433 - val_acc: 0.4394
+Epoch 50/200
+ - 3s - loss: 1.0977 - acc: 0.4882 - val_loss: 1.1432 - val_acc: 0.4298
+Epoch 51/200
+ - 3s - loss: 1.0975 - acc: 0.4840 - val_loss: 1.1460 - val_acc: 0.4381
+Epoch 52/200
+ - 3s - loss: 1.0970 - acc: 0.4876 - val_loss: 1.1443 - val_acc: 0.4295
+Epoch 53/200
+ - 3s - loss: 1.0976 - acc: 0.4869 - val_loss: 1.1438 - val_acc: 0.4379
+Epoch 54/200
+ - 3s - loss: 1.0973 - acc: 0.4829 - val_loss: 1.1416 - val_acc: 0.4278
+Epoch 55/200
+ - 4s - loss: 1.0972 - acc: 0.4843 - val_loss: 1.1428 - val_acc: 0.4342
+Epoch 56/200
+ - 4s - loss: 1.0948 - acc: 0.4836 - val_loss: 1.1428 - val_acc: 0.4321
+Epoch 57/200
+ - 3s - loss: 1.0962 - acc: 0.4871 - val_loss: 1.1421 - val_acc: 0.4287
+Epoch 58/200
+ - 3s - loss: 1.0950 - acc: 0.4925 - val_loss: 1.1433 - val_acc: 0.4367
+Epoch 59/200
+ - 3s - loss: 1.0937 - acc: 0.4885 - val_loss: 1.1423 - val_acc: 0.4350
+Epoch 60/200
+ - 3s - loss: 1.0953 - acc: 0.4882 - val_loss: 1.1440 - val_acc: 0.4300
+Epoch 61/200
+ - 4s - loss: 1.0949 - acc: 0.4891 - val_loss: 1.1429 - val_acc: 0.4302
+Epoch 62/200
+ - 4s - loss: 1.0943 - acc: 0.4908 - val_loss: 1.1411 - val_acc: 0.4338
+Epoch 63/200
+ - 5s - loss: 1.0940 - acc: 0.4891 - val_loss: 1.1401 - val_acc: 0.4371
+Epoch 64/200
+ - 5s - loss: 1.0947 - acc: 0.4853 - val_loss: 1.1381 - val_acc: 0.4363
+Epoch 65/200
+ - 4s - loss: 1.0938 - acc: 0.4904 - val_loss: 1.1391 - val_acc: 0.4229
+Epoch 66/200
+ - 4s - loss: 1.0934 - acc: 0.4866 - val_loss: 1.1408 - val_acc: 0.4223
+Epoch 67/200
+ - 4s - loss: 1.0933 - acc: 0.4858 - val_loss: 1.1398 - val_acc: 0.4225
+Epoch 68/200
+ - 4s - loss: 1.0936 - acc: 0.4878 - val_loss: 1.1403 - val_acc: 0.4238
+Epoch 69/200
+ - 4s - loss: 1.0926 - acc: 0.4865 - val_loss: 1.1390 - val_acc: 0.4286
+Epoch 70/200
+ - 4s - loss: 1.0929 - acc: 0.4855 - val_loss: 1.1401 - val_acc: 0.4342
+Epoch 71/200
+ - 4s - loss: 1.0917 - acc: 0.4918 - val_loss: 1.1385 - val_acc: 0.4276
+Epoch 72/200
+ - 4s - loss: 1.0906 - acc: 0.4894 - val_loss: 1.1380 - val_acc: 0.4190
+Epoch 73/200
+ - 4s - loss: 1.0920 - acc: 0.4950 - val_loss: 1.1388 - val_acc: 0.4391
+Epoch 74/200
+ - 4s - loss: 1.0913 - acc: 0.4884 - val_loss: 1.1370 - val_acc: 0.4291
+Epoch 75/200
+ - 4s - loss: 1.0918 - acc: 0.4831 - val_loss: 1.1431 - val_acc: 0.4153
+Epoch 76/200
+ - 4s - loss: 1.0915 - acc: 0.4843 - val_loss: 1.1405 - val_acc: 0.4305
+Epoch 77/200
+ - 4s - loss: 1.0910 - acc: 0.4871 - val_loss: 1.1377 - val_acc: 0.4337
+Epoch 78/200
+ - 4s - loss: 1.0909 - acc: 0.4852 - val_loss: 1.1392 - val_acc: 0.4345
+Epoch 79/200
+ - 4s - loss: 1.0905 - acc: 0.4836 - val_loss: 1.1379 - val_acc: 0.4272
+Epoch 80/200
+ - 4s - loss: 1.0895 - acc: 0.4877 - val_loss: 1.1400 - val_acc: 0.4259
+Epoch 81/200
+ - 4s - loss: 1.0884 - acc: 0.4837 - val_loss: 1.1370 - val_acc: 0.4277
+Epoch 82/200
+ - 4s - loss: 1.0898 - acc: 0.4887 - val_loss: 1.1391 - val_acc: 0.4318
+Epoch 83/200
+ - 4s - loss: 1.0896 - acc: 0.4883 - val_loss: 1.1369 - val_acc: 0.4179
+Epoch 84/200
+ - 4s - loss: 1.0885 - acc: 0.4895 - val_loss: 1.1371 - val_acc: 0.4198
+Epoch 85/200
+ - 4s - loss: 1.0894 - acc: 0.4885 - val_loss: 1.1381 - val_acc: 0.4218
+Epoch 86/200
+ - 4s - loss: 1.0889 - acc: 0.4905 - val_loss: 1.1385 - val_acc: 0.4237
+Epoch 87/200
+ - 4s - loss: 1.0880 - acc: 0.4831 - val_loss: 1.1392 - val_acc: 0.4281
+Epoch 88/200
+ - 4s - loss: 1.0873 - acc: 0.4886 - val_loss: 1.1403 - val_acc: 0.4188
+Epoch 89/200
+ - 4s - loss: 1.0874 - acc: 0.4823 - val_loss: 1.1351 - val_acc: 0.4218
+Epoch 90/200
+ - 4s - loss: 1.0892 - acc: 0.4864 - val_loss: 1.1361 - val_acc: 0.4221
+Epoch 91/200
+ - 4s - loss: 1.0882 - acc: 0.4894 - val_loss: 1.1384 - val_acc: 0.4219
+Epoch 92/200
+ - 4s - loss: 1.0884 - acc: 0.4864 - val_loss: 1.1370 - val_acc: 0.4190
+Epoch 93/200
+ - 4s - loss: 1.0867 - acc: 0.4899 - val_loss: 1.1380 - val_acc: 0.4191
+Epoch 94/200
+ - 4s - loss: 1.0871 - acc: 0.4881 - val_loss: 1.1367 - val_acc: 0.4229
+Epoch 95/200
+ - 4s - loss: 1.0860 - acc: 0.4877 - val_loss: 1.1376 - val_acc: 0.4193
+Epoch 96/200
+ - 4s - loss: 1.0859 - acc: 0.4917 - val_loss: 1.1365 - val_acc: 0.4320
+Epoch 97/200
+ - 4s - loss: 1.0855 - acc: 0.4930 - val_loss: 1.1366 - val_acc: 0.4253
+Epoch 98/200
+ - 4s - loss: 1.0869 - acc: 0.4925 - val_loss: 1.1374 - val_acc: 0.4269
+Epoch 99/200
+ - 4s - loss: 1.0852 - acc: 0.4890 - val_loss: 1.1369 - val_acc: 0.4224
+Epoch 100/200
+ - 4s - loss: 1.0859 - acc: 0.4880 - val_loss: 1.1375 - val_acc: 0.4211
+Epoch 101/200
+ - 4s - loss: 1.0851 - acc: 0.4899 - val_loss: 1.1365 - val_acc: 0.4210
+Epoch 102/200
+ - 4s - loss: 1.0848 - acc: 0.4888 - val_loss: 1.1366 - val_acc: 0.4246
+Epoch 103/200
+ - 4s - loss: 1.0851 - acc: 0.4906 - val_loss: 1.1352 - val_acc: 0.4229
+Epoch 104/200
+ - 3s - loss: 1.0849 - acc: 0.4895 - val_loss: 1.1364 - val_acc: 0.4216
+Epoch 105/200
+ - 3s - loss: 1.0852 - acc: 0.4912 - val_loss: 1.1353 - val_acc: 0.4276
+Epoch 106/200
+ - 3s - loss: 1.0845 - acc: 0.4952 - val_loss: 1.1361 - val_acc: 0.4237
+Epoch 107/200
+ - 3s - loss: 1.0844 - acc: 0.4903 - val_loss: 1.1390 - val_acc: 0.4196
+Epoch 108/200
+ - 3s - loss: 1.0849 - acc: 0.4902 - val_loss: 1.1395 - val_acc: 0.4245
+Epoch 109/200
+ - 3s - loss: 1.0828 - acc: 0.4871 - val_loss: 1.1356 - val_acc: 0.4266
+Epoch 110/200
+ - 4s - loss: 1.0837 - acc: 0.4919 - val_loss: 1.1393 - val_acc: 0.4175
+Epoch 111/200
+ - 3s - loss: 1.0833 - acc: 0.4913 - val_loss: 1.1341 - val_acc: 0.4285
+Epoch 112/200
+ - 4s - loss: 1.0827 - acc: 0.4928 - val_loss: 1.1361 - val_acc: 0.4215
+Epoch 113/200
+ - 3s - loss: 1.0843 - acc: 0.4898 - val_loss: 1.1351 - val_acc: 0.4152
+Epoch 114/200
+ - 3s - loss: 1.0827 - acc: 0.4915 - val_loss: 1.1350 - val_acc: 0.4230
+Epoch 115/200
+ - 4s - loss: 1.0819 - acc: 0.4913 - val_loss: 1.1334 - val_acc: 0.4283
+Epoch 116/200
+ - 4s - loss: 1.0815 - acc: 0.4908 - val_loss: 1.1346 - val_acc: 0.4198
+Epoch 117/200
+ - 4s - loss: 1.0834 - acc: 0.4925 - val_loss: 1.1353 - val_acc: 0.4253
+Epoch 118/200
+ - 4s - loss: 1.0822 - acc: 0.4922 - val_loss: 1.1379 - val_acc: 0.4280
+Epoch 119/200
+ - 3s - loss: 1.0820 - acc: 0.4898 - val_loss: 1.1364 - val_acc: 0.4291
+Epoch 120/200
+ - 4s - loss: 1.0820 - acc: 0.4916 - val_loss: 1.1365 - val_acc: 0.4315
+Epoch 121/200
+ - 4s - loss: 1.0812 - acc: 0.4908 - val_loss: 1.1365 - val_acc: 0.4328
+Epoch 122/200
+ - 5s - loss: 1.0817 - acc: 0.4928 - val_loss: 1.1355 - val_acc: 0.4244
+Epoch 123/200
+ - 4s - loss: 1.0823 - acc: 0.4913 - val_loss: 1.1342 - val_acc: 0.4368
+Epoch 124/200
+ - 4s - loss: 1.0799 - acc: 0.4915 - val_loss: 1.1329 - val_acc: 0.4265
+Epoch 125/200
+ - 3s - loss: 1.0808 - acc: 0.4901 - val_loss: 1.1342 - val_acc: 0.4204
+Epoch 126/200
+ - 3s - loss: 1.0800 - acc: 0.4929 - val_loss: 1.1345 - val_acc: 0.4275
+Epoch 127/200
+ - 3s - loss: 1.0798 - acc: 0.4922 - val_loss: 1.1328 - val_acc: 0.4298
+Epoch 128/200
+ - 3s - loss: 1.0791 - acc: 0.4928 - val_loss: 1.1336 - val_acc: 0.4285
+Epoch 129/200
+ - 3s - loss: 1.0806 - acc: 0.4956 - val_loss: 1.1338 - val_acc: 0.4270
+Epoch 130/200
+ - 3s - loss: 1.0798 - acc: 0.4954 - val_loss: 1.1343 - val_acc: 0.4402
+Epoch 131/200
+ - 4s - loss: 1.0804 - acc: 0.4896 - val_loss: 1.1357 - val_acc: 0.4294
+Epoch 132/200
+ - 3s - loss: 1.0799 - acc: 0.4953 - val_loss: 1.1384 - val_acc: 0.4198
+Epoch 133/200
+ - 3s - loss: 1.0793 - acc: 0.4949 - val_loss: 1.1341 - val_acc: 0.4314
+Epoch 134/200
+ - 3s - loss: 1.0796 - acc: 0.4954 - val_loss: 1.1343 - val_acc: 0.4270
+Epoch 135/200
+ - 3s - loss: 1.0795 - acc: 0.4896 - val_loss: 1.1354 - val_acc: 0.4365
+Epoch 136/200
+ - 3s - loss: 1.0785 - acc: 0.4931 - val_loss: 1.1345 - val_acc: 0.4296
+Epoch 137/200
+ - 3s - loss: 1.0789 - acc: 0.4934 - val_loss: 1.1362 - val_acc: 0.4322
+Epoch 138/200
+ - 3s - loss: 1.0782 - acc: 0.4997 - val_loss: 1.1358 - val_acc: 0.4292
+Epoch 139/200
+ - 3s - loss: 1.0781 - acc: 0.4941 - val_loss: 1.1338 - val_acc: 0.4305
+Epoch 140/200
+ - 3s - loss: 1.0783 - acc: 0.4945 - val_loss: 1.1335 - val_acc: 0.4257
+Epoch 141/200
+ - 3s - loss: 1.0762 - acc: 0.4949 - val_loss: 1.1360 - val_acc: 0.4318
+Epoch 142/200
+ - 3s - loss: 1.0763 - acc: 0.4998 - val_loss: 1.1347 - val_acc: 0.4277
+Epoch 143/200
+ - 3s - loss: 1.0767 - acc: 0.5010 - val_loss: 1.1321 - val_acc: 0.4349
+Epoch 144/200
+ - 3s - loss: 1.0772 - acc: 0.4981 - val_loss: 1.1388 - val_acc: 0.4315
+Epoch 145/200
+ - 3s - loss: 1.0758 - acc: 0.4996 - val_loss: 1.1331 - val_acc: 0.4457
+Epoch 146/200
+ - 3s - loss: 1.0763 - acc: 0.4987 - val_loss: 1.1347 - val_acc: 0.4308
+Epoch 147/200
+ - 3s - loss: 1.0758 - acc: 0.4983 - val_loss: 1.1338 - val_acc: 0.4281
+Epoch 148/200
+ - 3s - loss: 1.0762 - acc: 0.4976 - val_loss: 1.1334 - val_acc: 0.4285
+Epoch 149/200
+ - 3s - loss: 1.0760 - acc: 0.4943 - val_loss: 1.1341 - val_acc: 0.4292
+Epoch 150/200
+ - 3s - loss: 1.0749 - acc: 0.4945 - val_loss: 1.1346 - val_acc: 0.4358
+Epoch 151/200
+ - 3s - loss: 1.0755 - acc: 0.4979 - val_loss: 1.1356 - val_acc: 0.4207
+Epoch 152/200
+ - 3s - loss: 1.0748 - acc: 0.5027 - val_loss: 1.1338 - val_acc: 0.4230
+Epoch 153/200
+ - 3s - loss: 1.0751 - acc: 0.4981 - val_loss: 1.1352 - val_acc: 0.4170
+Epoch 154/200
+ - 3s - loss: 1.0736 - acc: 0.4962 - val_loss: 1.1352 - val_acc: 0.4274
+Epoch 155/200
+ - 3s - loss: 1.0731 - acc: 0.5017 - val_loss: 1.1322 - val_acc: 0.4193
+Epoch 156/200
+ - 3s - loss: 1.0747 - acc: 0.4965 - val_loss: 1.1334 - val_acc: 0.4279
+Epoch 157/200
+ - 3s - loss: 1.0734 - acc: 0.4977 - val_loss: 1.1349 - val_acc: 0.4307
+Epoch 158/200
+ - 3s - loss: 1.0733 - acc: 0.4917 - val_loss: 1.1328 - val_acc: 0.4268
+Epoch 159/200
+ - 3s - loss: 1.0733 - acc: 0.4987 - val_loss: 1.1340 - val_acc: 0.4179
+Epoch 160/200
+ - 4s - loss: 1.0736 - acc: 0.4981 - val_loss: 1.1343 - val_acc: 0.4270
+Epoch 161/200
+ - 3s - loss: 1.0723 - acc: 0.5011 - val_loss: 1.1357 - val_acc: 0.4203
+Epoch 162/200
+ - 3s - loss: 1.0712 - acc: 0.5026 - val_loss: 1.1344 - val_acc: 0.4332
+Epoch 163/200
+ - 3s - loss: 1.0702 - acc: 0.5053 - val_loss: 1.1342 - val_acc: 0.4472
+Epoch 164/200
+ - 3s - loss: 1.0707 - acc: 0.5053 - val_loss: 1.1340 - val_acc: 0.4272
+Epoch 165/200
+ - 3s - loss: 1.0712 - acc: 0.5006 - val_loss: 1.1351 - val_acc: 0.4262
+Epoch 166/200
+ - 3s - loss: 1.0744 - acc: 0.4978 - val_loss: 1.1365 - val_acc: 0.4308
+Epoch 167/200
+ - 3s - loss: 1.0717 - acc: 0.4972 - val_loss: 1.1352 - val_acc: 0.4334
+Epoch 168/200
+ - 3s - loss: 1.0717 - acc: 0.5002 - val_loss: 1.1342 - val_acc: 0.4120
+Epoch 169/200
+ - 3s - loss: 1.0707 - acc: 0.4992 - val_loss: 1.1407 - val_acc: 0.4182
+Epoch 170/200
+ - 3s - loss: 1.0716 - acc: 0.4891 - val_loss: 1.1342 - val_acc: 0.4250
+Epoch 171/200
+ - 3s - loss: 1.0718 - acc: 0.5005 - val_loss: 1.1374 - val_acc: 0.4307
+Epoch 172/200
+ - 3s - loss: 1.0675 - acc: 0.5021 - val_loss: 1.1414 - val_acc: 0.4325
+Epoch 173/200
+ - 3s - loss: 1.0708 - acc: 0.5014 - val_loss: 1.1395 - val_acc: 0.4327
+Epoch 174/200
+ - 3s - loss: 1.0688 - acc: 0.4965 - val_loss: 1.1344 - val_acc: 0.4223
+Epoch 175/200
+ - 3s - loss: 1.0689 - acc: 0.5003 - val_loss: 1.1360 - val_acc: 0.4284
+Epoch 176/200
+ - 3s - loss: 1.0681 - acc: 0.4988 - val_loss: 1.1410 - val_acc: 0.4313
+Epoch 177/200
+ - 3s - loss: 1.0693 - acc: 0.4981 - val_loss: 1.1390 - val_acc: 0.4314
+Epoch 178/200
+ - 3s - loss: 1.0677 - acc: 0.4977 - val_loss: 1.1402 - val_acc: 0.4205
+Epoch 179/200
+ - 3s - loss: 1.0693 - acc: 0.4980 - val_loss: 1.1370 - val_acc: 0.4176
+Epoch 180/200
+ - 3s - loss: 1.0670 - acc: 0.4997 - val_loss: 1.1390 - val_acc: 0.4303
+Epoch 181/200
+ - 4s - loss: 1.0676 - acc: 0.4984 - val_loss: 1.1400 - val_acc: 0.4396
+Epoch 182/200
+ - 3s - loss: 1.0680 - acc: 0.4979 - val_loss: 1.1378 - val_acc: 0.4299
+Epoch 183/200
+ - 3s - loss: 1.0666 - acc: 0.4971 - val_loss: 1.1411 - val_acc: 0.4317
+Epoch 184/200
+ - 3s - loss: 1.0667 - acc: 0.5021 - val_loss: 1.1390 - val_acc: 0.4237
+Epoch 185/200
+ - 3s - loss: 1.0666 - acc: 0.5025 - val_loss: 1.1399 - val_acc: 0.4205
+Epoch 186/200
+ - 3s - loss: 1.0645 - acc: 0.4972 - val_loss: 1.1409 - val_acc: 0.4323
+Epoch 187/200
+ - 3s - loss: 1.0668 - acc: 0.5000 - val_loss: 1.1425 - val_acc: 0.4308
+Epoch 188/200
+ - 3s - loss: 1.0658 - acc: 0.5034 - val_loss: 1.1459 - val_acc: 0.4445
+Epoch 189/200
+ - 3s - loss: 1.0662 - acc: 0.4982 - val_loss: 1.1442 - val_acc: 0.4231
+Epoch 190/200
+ - 3s - loss: 1.0651 - acc: 0.5000 - val_loss: 1.1415 - val_acc: 0.4269
+Epoch 191/200
+ - 3s - loss: 1.0631 - acc: 0.4984 - val_loss: 1.1406 - val_acc: 0.4203
+Epoch 192/200
+ - 3s - loss: 1.0644 - acc: 0.5067 - val_loss: 1.1424 - val_acc: 0.4285
+Epoch 193/200
+ - 3s - loss: 1.0645 - acc: 0.5019 - val_loss: 1.1408 - val_acc: 0.4278
+Epoch 194/200
+ - 3s - loss: 1.0628 - acc: 0.5077 - val_loss: 1.1449 - val_acc: 0.4319
+Epoch 195/200
+ - 3s - loss: 1.0647 - acc: 0.4992 - val_loss: 1.1446 - val_acc: 0.4229
+Epoch 196/200
+ - 3s - loss: 1.0632 - acc: 0.5066 - val_loss: 1.1461 - val_acc: 0.4345
+Epoch 197/200
+ - 3s - loss: 1.0623 - acc: 0.5036 - val_loss: 1.1467 - val_acc: 0.4381
+Epoch 198/200
+ - 3s - loss: 1.0610 - acc: 0.5091 - val_loss: 1.1486 - val_acc: 0.4335
+Epoch 199/200
+ - 3s - loss: 1.0595 - acc: 0.5062 - val_loss: 1.1482 - val_acc: 0.4254
+Epoch 200/200
+ - 3s - loss: 1.0608 - acc: 0.5069 - val_loss: 1.1505 - val_acc: 0.4486
+predicted percentages:
+   down_prediction  flat_prediction  up_prediction
+0         0.505318         0.007471       0.487211
+1         0.495413         0.018242       0.486345
+2         0.469446         0.018172       0.512382
+3         0.459898         0.057714       0.482388
+4         0.410559         0.115654       0.473787
+       down_prediction  flat_prediction  up_prediction
+36782         0.433984         0.137092       0.428925
+36783         0.443023         0.105603       0.451374
+36784         0.434405         0.161184       0.404411
+36785         0.412160         0.178693       0.409147
+36786         0.483006         0.122132       0.394862
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 0  x std: 
+Percent correct 0.00_sigma: 66.89922058102142 %
+percentage of periods betting up 0.00_sigma : 50.126403349 %; percentage of periods betting down: 0.00_sigma  49.873596651 %; percentage of periods staying out of the market: 0.00_sigma  0.0 %
+There were 15513 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.48.
+The CAGR for 0.00_sigma. is: 24.20 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.87.
+The CAGR for 0.00_sigma. is: 12.25 percent. after commissions
+average_gain: 0.0004494625882173341
+average_loss: -0.0007979994459400058
+average_trade: 3.6542931955345426e-05
+
+
+Percent correct 0.20_sigma: 66.91883329691937 %
+percentage of periods betting up 0.20_sigma : 50.0203876369 %; percentage of periods betting down: 0.20_sigma  49.7675809389 %; percentage of periods staying out of the market: 0.20_sigma  0.212031424144 %
+There were 15579 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.46.
+The CAGR for 0.20_sigma. is: 23.94 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.84.
+The CAGR for 0.20_sigma. is: 12.02 percent. after commissions
+average_gain: 0.0004483080222540034
+average_loss: -0.0007972183169196722
+average_trade: 3.6273377661119394e-05
+
+
+Percent correct 0.40_sigma: 67.03962960921568 %
+percentage of periods betting up 0.40_sigma : 49.3652649034 %; percentage of periods betting down: 0.40_sigma  49.5229292957 %; percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
+There were 15788 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.61.
+The CAGR for 0.40_sigma. is: 24.72 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.98.
+The CAGR for 0.40_sigma. is: 12.76 percent. after commissions
+average_gain: 0.000447643873660592
+average_loss: -0.0007962537265445978
+average_trade: 3.7650617350822874e-05
+
+
+Percent correct 0.60_sigma: 84.61538461538461 %
+percentage of periods betting up 0.60_sigma : 0.0407752738739 %; percentage of periods betting down: 0.60_sigma  0.0652404381983 %; percentage of periods staying out of the market: 0.60_sigma  99.8939842879 %
+There were 79 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 1.13.
+The CAGR for 0.60_sigma. is: 0.18 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.98.
+The CAGR for 0.60_sigma. is: 0.15 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00027722540281068273
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 0.1  x std: 
+Percent correct 0.00_sigma: 66.89922058102142 %
+percentage of periods betting up 0.00_sigma : 50.126403349 %; percentage of periods betting down: 0.00_sigma  49.873596651 %; percentage of periods staying out of the market: 0.00_sigma  0.0 %
+There were 15513 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.48.
+The CAGR for 0.00_sigma. is: 24.20 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.87.
+The CAGR for 0.00_sigma. is: 12.25 percent. after commissions
+average_gain: 0.0004494625882173341
+average_loss: -0.0007979994459400058
+average_trade: 3.6542931955345426e-05
+
+
+Percent correct 0.20_sigma: 66.91883329691937 %
+percentage of periods betting up 0.20_sigma : 50.0203876369 %; percentage of periods betting down: 0.20_sigma  49.7675809389 %; percentage of periods staying out of the market: 0.20_sigma  0.212031424144 %
+There were 15579 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.46.
+The CAGR for 0.20_sigma. is: 23.94 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.84.
+The CAGR for 0.20_sigma. is: 12.02 percent. after commissions
+average_gain: 0.0004483080222540034
+average_loss: -0.0007972183169196722
+average_trade: 3.6273377661119394e-05
+
+
+Percent correct 0.40_sigma: 67.03962960921568 %
+percentage of periods betting up 0.40_sigma : 49.3652649034 %; percentage of periods betting down: 0.40_sigma  49.5229292957 %; percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
+There were 15788 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.61.
+The CAGR for 0.40_sigma. is: 24.72 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.98.
+The CAGR for 0.40_sigma. is: 12.76 percent. after commissions
+average_gain: 0.000447643873660592
+average_loss: -0.0007962537265445978
+average_trade: 3.7650617350822874e-05
+
+
+Percent correct 0.60_sigma: 84.61538461538461 %
+percentage of periods betting up 0.60_sigma : 0.0407752738739 %; percentage of periods betting down: 0.60_sigma  0.0652404381983 %; percentage of periods staying out of the market: 0.60_sigma  99.8939842879 %
+There were 79 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 1.13.
+The CAGR for 0.60_sigma. is: 0.18 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.98.
+The CAGR for 0.60_sigma. is: 0.15 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00027722540281068273
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 0.2  x std: 
+Percent correct 0.00_sigma: 66.89922058102142 %
+percentage of periods betting up 0.00_sigma : 50.126403349 %; percentage of periods betting down: 0.00_sigma  49.873596651 %; percentage of periods staying out of the market: 0.00_sigma  0.0 %
+There were 15513 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.48.
+The CAGR for 0.00_sigma. is: 24.20 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.87.
+The CAGR for 0.00_sigma. is: 12.25 percent. after commissions
+average_gain: 0.0004494625882173341
+average_loss: -0.0007979994459400058
+average_trade: 3.6542931955345426e-05
+
+
+Percent correct 0.20_sigma: 66.91883329691937 %
+percentage of periods betting up 0.20_sigma : 50.0203876369 %; percentage of periods betting down: 0.20_sigma  49.7675809389 %; percentage of periods staying out of the market: 0.20_sigma  0.212031424144 %
+There were 15579 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.46.
+The CAGR for 0.20_sigma. is: 23.94 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.84.
+The CAGR for 0.20_sigma. is: 12.02 percent. after commissions
+average_gain: 0.0004483080222540034
+average_loss: -0.0007972183169196722
+average_trade: 3.6273377661119394e-05
+
+
+Percent correct 0.40_sigma: 67.03962960921568 %
+percentage of periods betting up 0.40_sigma : 49.3652649034 %; percentage of periods betting down: 0.40_sigma  49.5229292957 %; percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
+There were 15788 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.61.
+The CAGR for 0.40_sigma. is: 24.72 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.98.
+The CAGR for 0.40_sigma. is: 12.76 percent. after commissions
+average_gain: 0.000447643873660592
+average_loss: -0.0007962537265445978
+average_trade: 3.7650617350822874e-05
+
+
+Percent correct 0.60_sigma: 84.61538461538461 %
+percentage of periods betting up 0.60_sigma : 0.0407752738739 %; percentage of periods betting down: 0.60_sigma  0.0652404381983 %; percentage of periods staying out of the market: 0.60_sigma  99.8939842879 %
+There were 79 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 1.13.
+The CAGR for 0.60_sigma. is: 0.18 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.98.
+The CAGR for 0.60_sigma. is: 0.15 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00027722540281068273
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 0.4  x std: 
+Percent correct 0.00_sigma: 66.90288642372373 %
+percentage of periods betting up 0.00_sigma : 50.1182482942 %; percentage of periods betting down: 0.00_sigma  49.8681599478 %; percentage of periods staying out of the market: 0.00_sigma  0.013591757958 %
+There were 15519 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.48.
+The CAGR for 0.00_sigma. is: 24.18 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.87.
+The CAGR for 0.00_sigma. is: 12.23 percent. after commissions
+average_gain: 0.00044942161549702556
+average_loss: -0.0007981274132683175
+average_trade: 3.651889652676415e-05
+
+
+Percent correct 0.20_sigma: 66.91883329691937 %
+percentage of periods betting up 0.20_sigma : 50.0203876369 %; percentage of periods betting down: 0.20_sigma  49.7675809389 %; percentage of periods staying out of the market: 0.20_sigma  0.212031424144 %
+There were 15579 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.46.
+The CAGR for 0.20_sigma. is: 23.94 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.84.
+The CAGR for 0.20_sigma. is: 12.02 percent. after commissions
+average_gain: 0.0004483080222540034
+average_loss: -0.0007972183169196722
+average_trade: 3.6273377661119394e-05
+
+
+Percent correct 0.40_sigma: 67.03962960921568 %
+percentage of periods betting up 0.40_sigma : 49.3652649034 %; percentage of periods betting down: 0.40_sigma  49.5229292957 %; percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
+There were 15788 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.61.
+The CAGR for 0.40_sigma. is: 24.72 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.98.
+The CAGR for 0.40_sigma. is: 12.76 percent. after commissions
+average_gain: 0.000447643873660592
+average_loss: -0.0007962537265445978
+average_trade: 3.7650617350822874e-05
+
+
+Percent correct 0.60_sigma: 84.61538461538461 %
+percentage of periods betting up 0.60_sigma : 0.0407752738739 %; percentage of periods betting down: 0.60_sigma  0.0652404381983 %; percentage of periods staying out of the market: 0.60_sigma  99.8939842879 %
+There were 79 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 1.13.
+The CAGR for 0.60_sigma. is: 0.18 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.98.
+The CAGR for 0.60_sigma. is: 0.15 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00027722540281068273
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 0.8  x std: 
+Percent correct 0.00_sigma: 66.90765243486564 %
+percentage of periods betting up 0.00_sigma : 50.0693179656 %; percentage of periods betting down: 0.00_sigma  49.8246663223 %; percentage of periods staying out of the market: 0.00_sigma  0.106015712072 %
+There were 15554 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.44.
+The CAGR for 0.00_sigma. is: 23.86 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.83.
+The CAGR for 0.00_sigma. is: 11.94 percent. after commissions
+average_gain: 0.00044870891796669775
+average_loss: -0.0007980532933300859
+average_trade: 3.6126033693547816e-05
+
+
+Percent correct 0.20_sigma: 66.91883329691937 %
+percentage of periods betting up 0.20_sigma : 50.0203876369 %; percentage of periods betting down: 0.20_sigma  49.7675809389 %; percentage of periods staying out of the market: 0.20_sigma  0.212031424144 %
+There were 15579 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.46.
+The CAGR for 0.20_sigma. is: 23.94 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.84.
+The CAGR for 0.20_sigma. is: 12.02 percent. after commissions
+average_gain: 0.0004483080222540034
+average_loss: -0.0007972183169196722
+average_trade: 3.6273377661119394e-05
+
+
+Percent correct 0.40_sigma: 67.03962960921568 %
+percentage of periods betting up 0.40_sigma : 49.3652649034 %; percentage of periods betting down: 0.40_sigma  49.5229292957 %; percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
+There were 15788 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.61.
+The CAGR for 0.40_sigma. is: 24.72 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.98.
+The CAGR for 0.40_sigma. is: 12.76 percent. after commissions
+average_gain: 0.000447643873660592
+average_loss: -0.0007962537265445978
+average_trade: 3.7650617350822874e-05
+
+
+Percent correct 0.60_sigma: 84.61538461538461 %
+percentage of periods betting up 0.60_sigma : 0.0407752738739 %; percentage of periods betting down: 0.60_sigma  0.0652404381983 %; percentage of periods staying out of the market: 0.60_sigma  99.8939842879 %
+There were 79 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 1.13.
+The CAGR for 0.60_sigma. is: 0.18 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.98.
+The CAGR for 0.60_sigma. is: 0.15 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00027722540281068273
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 1  x std: 
+Percent correct 0.00_sigma: 66.90680856869969 %
+percentage of periods betting up 0.00_sigma : 50.0584445592 %; percentage of periods betting down: 0.00_sigma  49.8083562128 %; percentage of periods staying out of the market: 0.00_sigma  0.133199227988 %
+There were 15562 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.44.
+The CAGR for 0.00_sigma. is: 23.86 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.83.
+The CAGR for 0.00_sigma. is: 11.94 percent. after commissions
+average_gain: 0.0004486082156616446
+average_loss: -0.0007978008545244539
+average_trade: 3.613167604780536e-05
+
+
+Percent correct 0.20_sigma: 66.91883329691937 %
+percentage of periods betting up 0.20_sigma : 50.0203876369 %; percentage of periods betting down: 0.20_sigma  49.7675809389 %; percentage of periods staying out of the market: 0.20_sigma  0.212031424144 %
+There were 15579 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.46.
+The CAGR for 0.20_sigma. is: 23.94 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.84.
+The CAGR for 0.20_sigma. is: 12.02 percent. after commissions
+average_gain: 0.0004483080222540034
+average_loss: -0.0007972183169196722
+average_trade: 3.6273377661119394e-05
+
+
+Percent correct 0.40_sigma: 67.03962960921568 %
+percentage of periods betting up 0.40_sigma : 49.3652649034 %; percentage of periods betting down: 0.40_sigma  49.5229292957 %; percentage of periods staying out of the market: 0.40_sigma  1.11180580096 %
+There were 15788 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.61.
+The CAGR for 0.40_sigma. is: 24.72 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.98.
+The CAGR for 0.40_sigma. is: 12.76 percent. after commissions
+average_gain: 0.000447643873660592
+average_loss: -0.0007962537265445978
+average_trade: 3.7650617350822874e-05
+
+
+Percent correct 0.60_sigma: 84.61538461538461 %
+percentage of periods betting up 0.60_sigma : 0.0407752738739 %; percentage of periods betting down: 0.60_sigma  0.0652404381983 %; percentage of periods staying out of the market: 0.60_sigma  99.8939842879 %
+There were 79 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 1.13.
+The CAGR for 0.60_sigma. is: 0.18 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.98.
+The CAGR for 0.60_sigma. is: 0.15 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00027722540281068273
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 2  x std: 
+Percent correct 0.00_sigma: 66.93361029873999 %
+percentage of periods betting up 0.00_sigma : 49.9823307147 %; percentage of periods betting down: 0.00_sigma  49.726805665 %; percentage of periods staying out of the market: 0.00_sigma  0.290863620301 %
+There were 15594 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.47.
+The CAGR for 0.00_sigma. is: 23.98 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.85.
+The CAGR for 0.00_sigma. is: 12.06 percent. after commissions
+average_gain: 0.0004481570455261514
+average_loss: -0.0007972548051563738
+average_trade: 3.634430959373034e-05
+
+
+Percent correct 0.20_sigma: 66.93361029873999 %
+percentage of periods betting up 0.20_sigma : 49.9823307147 %; percentage of periods betting down: 0.20_sigma  49.726805665 %; percentage of periods staying out of the market: 0.20_sigma  0.290863620301 %
+There were 15594 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.47.
+The CAGR for 0.20_sigma. is: 23.98 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.85.
+The CAGR for 0.20_sigma. is: 12.06 percent. after commissions
+average_gain: 0.0004481570455261514
+average_loss: -0.0007972548051563738
+average_trade: 3.634430959373034e-05
+
+
+Percent correct 0.40_sigma: 67.03966044704131 %
+percentage of periods betting up 0.40_sigma : 49.3625465518 %; percentage of periods betting down: 0.40_sigma  49.5174925925 %; percentage of periods staying out of the market: 0.40_sigma  1.11996085574 %
+There were 15791 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.61.
+The CAGR for 0.40_sigma. is: 24.71 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.97.
+The CAGR for 0.40_sigma. is: 12.75 percent. after commissions
+average_gain: 0.0004476595084646362
+average_loss: -0.000796319135230846
+average_trade: 3.7639923536254195e-05
+
+
+Percent correct 0.60_sigma: 84.21052631578947 %
+percentage of periods betting up 0.60_sigma : 0.0380569222823 %; percentage of periods betting down: 0.60_sigma  0.0652404381983 %; percentage of periods staying out of the market: 0.60_sigma  99.8967026395 %
+There were 77 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 1.09.
+The CAGR for 0.60_sigma. is: 0.17 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.94.
+The CAGR for 0.60_sigma. is: 0.14 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00027136291341096387
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 4  x std: 
+Percent correct 0.00_sigma: 66.960219478738 %
+percentage of periods betting up 0.00_sigma : 49.7050588523 %; percentage of periods betting down: 0.00_sigma  49.6316633593 %; percentage of periods staying out of the market: 0.00_sigma  0.663277788349 %
+There were 15696 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.57.
+The CAGR for 0.00_sigma. is: 24.50 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.94.
+The CAGR for 0.00_sigma. is: 12.54 percent. after commissions
+average_gain: 0.000447254433105499
+average_loss: -0.0007938873800599985
+average_trade: 3.718390207794567e-05
+
+
+Percent correct 0.20_sigma: 66.960219478738 %
+percentage of periods betting up 0.20_sigma : 49.7050588523 %; percentage of periods betting down: 0.20_sigma  49.6316633593 %; percentage of periods staying out of the market: 0.20_sigma  0.663277788349 %
+There were 15696 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.57.
+The CAGR for 0.20_sigma. is: 24.50 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.94.
+The CAGR for 0.20_sigma. is: 12.54 percent. after commissions
+average_gain: 0.000447254433105499
+average_loss: -0.0007938873800599985
+average_trade: 3.718390207794567e-05
+
+
+Percent correct 0.40_sigma: 67.02157003365146 %
+percentage of periods betting up 0.40_sigma : 49.3299263327 %; percentage of periods betting down: 0.40_sigma  49.4712806154 %; percentage of periods staying out of the market: 0.40_sigma  1.19879305189 %
+There were 15828 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.58.
+The CAGR for 0.40_sigma. is: 24.51 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.95.
+The CAGR for 0.40_sigma. is: 12.56 percent. after commissions
+average_gain: 0.0004475818446290415
+average_loss: -0.0007962003910461919
+average_trade: 3.740199110293999e-05
+
+
+Percent correct 0.60_sigma: 81.25 %
+percentage of periods betting up 0.60_sigma : 0.0271835159159 %; percentage of periods betting down: 0.60_sigma  0.0598037350151 %; percentage of periods staying out of the market: 0.60_sigma  99.9130127491 %
+There were 65 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.82.
+The CAGR for 0.60_sigma. is: 0.12 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.68.
+The CAGR for 0.60_sigma. is: 0.10 percent. after commissions
+average_gain: 0.0005000000000000003
+average_loss: -0.0009480348817305639
+average_trade: 0.00022849345967551951
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 8  x std: 
+Percent correct 0.00_sigma: 66.97538589904046 %
+percentage of periods betting up 0.00_sigma : 49.0499361187 %; percentage of periods betting down: 0.00_sigma  48.9384837035 %; percentage of periods staying out of the market: 0.00_sigma  2.01158017778 %
+There were 16088 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 3.58.
+The CAGR for 0.00_sigma. is: 24.23 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.92.
+The CAGR for 0.00_sigma. is: 12.27 percent. after commissions
+average_gain: 0.0004467844325869409
+average_loss: -0.000793105730380604
+average_trade: 3.731549099109343e-05
+
+
+Percent correct 0.20_sigma: 66.97538589904046 %
+percentage of periods betting up 0.20_sigma : 49.0499361187 %; percentage of periods betting down: 0.20_sigma  48.9384837035 %; percentage of periods staying out of the market: 0.20_sigma  2.01158017778 %
+There were 16088 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 3.58.
+The CAGR for 0.20_sigma. is: 24.23 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.92.
+The CAGR for 0.20_sigma. is: 12.27 percent. after commissions
+average_gain: 0.0004467844325869409
+average_loss: -0.000793105730380604
+average_trade: 3.731549099109343e-05
+
+
+Percent correct 0.40_sigma: 67.00769402319358 %
+percentage of periods betting up 0.40_sigma : 48.9248919455 %; percentage of periods betting down: 0.40_sigma  48.835186343 %; percentage of periods staying out of the market: 0.40_sigma  2.23992171147 %
+There were 16163 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.57.
+The CAGR for 0.40_sigma. is: 24.18 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.92.
+The CAGR for 0.40_sigma. is: 12.24 percent. after commissions
+average_gain: 0.00044705798945038637
+average_loss: -0.0007948101426589144
+average_trade: 3.733705547637787e-05
+
+
+Percent correct 0.60_sigma: 80.95238095238095 %
+percentage of periods betting up 0.60_sigma : 0.00815505477478 %; percentage of periods betting down: 0.60_sigma  0.0489303286487 %; percentage of periods staying out of the market: 0.60_sigma  99.9429146166 %
+There were 43 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.75.
+The CAGR for 0.60_sigma. is: 0.08 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.63.
+The CAGR for 0.60_sigma. is: 0.07 percent. after commissions
+average_gain: 0.0005000000000000002
+average_loss: -0.0008280947877210565
+average_trade: 0.0002470295642436085
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 16  x std: 
+Percent correct 0.00_sigma: 72.02075629249673 %
+percentage of periods betting up 0.00_sigma : 26.6779025199 %; percentage of periods betting down: 0.00_sigma  18.9469105934 %; percentage of periods staying out of the market: 0.00_sigma  54.3751868867 %
+There were 15593 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 1.94.
+The CAGR for 0.00_sigma. is: 9.71 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 0.57.
+The CAGR for 0.00_sigma. is: 2.67 percent. after commissions
+average_gain: 0.0004763199544115933
+average_loss: -0.0011034685464897237
+average_trade: 3.430707968131549e-05
+
+
+Percent correct 0.20_sigma: 72.02075629249673 %
+percentage of periods betting up 0.20_sigma : 26.6779025199 %; percentage of periods betting down: 0.20_sigma  18.9469105934 %; percentage of periods staying out of the market: 0.20_sigma  54.3751868867 %
+There were 15593 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 1.94.
+The CAGR for 0.20_sigma. is: 9.71 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 0.57.
+The CAGR for 0.20_sigma. is: 2.67 percent. after commissions
+average_gain: 0.0004763199544115933
+average_loss: -0.0011034685464897237
+average_trade: 3.430707968131549e-05
+
+
+Percent correct 0.40_sigma: 72.02075629249673 %
+percentage of periods betting up 0.40_sigma : 26.6779025199 %; percentage of periods betting down: 0.40_sigma  18.9469105934 %; percentage of periods staying out of the market: 0.40_sigma  54.3751868867 %
+There were 15593 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 1.94.
+The CAGR for 0.40_sigma. is: 9.71 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 0.57.
+The CAGR for 0.40_sigma. is: 2.67 percent. after commissions
+average_gain: 0.0004763199544115933
+average_loss: -0.0011034685464897237
+average_trade: 3.430707968131549e-05
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 32  x std: 
+Percent correct 0.00_sigma: 73.30316742081448 %
+percentage of periods betting up 0.00_sigma : 3.78938211868 %; percentage of periods betting down: 0.00_sigma  0.418626145106 %; percentage of periods staying out of the market: 0.00_sigma  95.7919917362 %
+There were 2792 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 0.44.
+The CAGR for 0.00_sigma. is: 0.65 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: -0.17.
+The CAGR for 0.00_sigma. is: -0.27 percent. after commissions
+average_gain: 0.00048795337881914907
+average_loss: -0.0012424903634162428
+average_trade: 2.597971007757759e-05
+
+
+Percent correct 0.20_sigma: 73.30316742081448 %
+percentage of periods betting up 0.20_sigma : 3.78938211868 %; percentage of periods betting down: 0.20_sigma  0.418626145106 %; percentage of periods staying out of the market: 0.20_sigma  95.7919917362 %
+There were 2792 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 0.44.
+The CAGR for 0.20_sigma. is: 0.65 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: -0.17.
+The CAGR for 0.20_sigma. is: -0.27 percent. after commissions
+average_gain: 0.00048795337881914907
+average_loss: -0.0012424903634162428
+average_trade: 2.597971007757759e-05
+
+
+Percent correct 0.40_sigma: 73.30316742081448 %
+percentage of periods betting up 0.40_sigma : 3.78938211868 %; percentage of periods betting down: 0.40_sigma  0.418626145106 %; percentage of periods staying out of the market: 0.40_sigma  95.7919917362 %
+There were 2792 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 0.44.
+The CAGR for 0.40_sigma. is: 0.65 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: -0.17.
+The CAGR for 0.40_sigma. is: -0.27 percent. after commissions
+average_gain: 0.00048795337881914907
+average_loss: -0.0012424903634162428
+average_trade: 2.597971007757759e-05
+
+
+>Saved model to disk
+        var1      var2      var3      var4 ...  return_max  down  flat  up
+1  -0.000222  0.000589  0.000071  0.001170 ...    0.000523     0     1   0
+2   0.001197  0.000199  0.000514 -0.000514 ...    0.001081     0     0   1
+3  -0.000239  0.000319  0.000519  0.000585 ...    0.000620     0     1   0
+4   0.000514  0.000053 -0.000257 -0.000213 ...    0.000638     0     1   0
+5  -0.000372 -0.000354 -0.000518 -0.001098 ...    0.000940     0     1   0
+6  -0.000939 -0.000637 -0.000337 -0.000044 ...    0.001020     0     0   1
+7  -0.000239 -0.000159 -0.000022  0.000213 ...    0.000962     0     1   0
+8   0.000381  0.000323  0.000293  0.000470 ...    0.000408     0     1   0
+9   0.000479 -0.000075  0.000058 -0.000346 ...    0.000377     1     0   0
+10 -0.000040 -0.000071 -0.000421  0.000151 ...    0.001485     0     0   1
+
+[10 rows x 45 columns]
+down/flat/up:
+21185
+34779
+21623
+Train on 36786 samples, validate on 36787 samples
+Epoch 1/200
+ - 3s - loss: 1.1961 - acc: 0.4220 - val_loss: 1.0553 - val_acc: 0.5301
+Epoch 2/200
+ - 3s - loss: 1.0834 - acc: 0.4832 - val_loss: 1.0189 - val_acc: 0.5459
+Epoch 3/200
+ - 3s - loss: 1.0689 - acc: 0.4971 - val_loss: 0.9987 - val_acc: 0.5467
+Epoch 4/200
+ - 3s - loss: 1.0618 - acc: 0.5020 - val_loss: 0.9909 - val_acc: 0.5536
+Epoch 5/200
+ - 3s - loss: 1.0584 - acc: 0.5007 - val_loss: 0.9861 - val_acc: 0.5508
+Epoch 6/200
+ - 3s - loss: 1.0540 - acc: 0.5052 - val_loss: 0.9819 - val_acc: 0.5464
+Epoch 7/200
+ - 3s - loss: 1.0510 - acc: 0.5079 - val_loss: 0.9799 - val_acc: 0.5528
+Epoch 8/200
+ - 3s - loss: 1.0499 - acc: 0.5056 - val_loss: 0.9793 - val_acc: 0.5583
+Epoch 9/200
+ - 3s - loss: 1.0489 - acc: 0.5048 - val_loss: 0.9784 - val_acc: 0.5631
+Epoch 10/200
+ - 3s - loss: 1.0469 - acc: 0.5061 - val_loss: 0.9764 - val_acc: 0.5564
+Epoch 11/200
+ - 4s - loss: 1.0455 - acc: 0.5062 - val_loss: 0.9770 - val_acc: 0.5522
+Epoch 12/200
+ - 4s - loss: 1.0444 - acc: 0.5092 - val_loss: 0.9763 - val_acc: 0.5581
+Epoch 13/200
+ - 3s - loss: 1.0443 - acc: 0.5118 - val_loss: 0.9768 - val_acc: 0.5531
+Epoch 14/200
+ - 3s - loss: 1.0448 - acc: 0.5075 - val_loss: 0.9772 - val_acc: 0.5605
+Epoch 15/200
+ - 3s - loss: 1.0424 - acc: 0.5115 - val_loss: 0.9755 - val_acc: 0.5587
+Epoch 16/200
+ - 3s - loss: 1.0421 - acc: 0.5110 - val_loss: 0.9749 - val_acc: 0.5525
+Epoch 17/200
+ - 3s - loss: 1.0405 - acc: 0.5093 - val_loss: 0.9746 - val_acc: 0.5516
+Epoch 18/200
+ - 3s - loss: 1.0403 - acc: 0.5125 - val_loss: 0.9743 - val_acc: 0.5605
+Epoch 19/200
+ - 3s - loss: 1.0402 - acc: 0.5116 - val_loss: 0.9745 - val_acc: 0.5588
+Epoch 20/200
+ - 3s - loss: 1.0402 - acc: 0.5107 - val_loss: 0.9734 - val_acc: 0.5564
+Epoch 21/200
+ - 3s - loss: 1.0405 - acc: 0.5101 - val_loss: 0.9733 - val_acc: 0.5557
+Epoch 22/200
+ - 3s - loss: 1.0386 - acc: 0.5097 - val_loss: 0.9728 - val_acc: 0.5547
+Epoch 23/200
+ - 3s - loss: 1.0377 - acc: 0.5117 - val_loss: 0.9715 - val_acc: 0.5609
+Epoch 24/200
+ - 3s - loss: 1.0393 - acc: 0.5111 - val_loss: 0.9725 - val_acc: 0.5590
+Epoch 25/200
+ - 3s - loss: 1.0377 - acc: 0.5117 - val_loss: 0.9709 - val_acc: 0.5596
+Epoch 26/200
+ - 3s - loss: 1.0377 - acc: 0.5105 - val_loss: 0.9708 - val_acc: 0.5571
+Epoch 27/200
+ - 3s - loss: 1.0379 - acc: 0.5135 - val_loss: 0.9716 - val_acc: 0.5583
+Epoch 28/200
+ - 3s - loss: 1.0377 - acc: 0.5110 - val_loss: 0.9706 - val_acc: 0.5622
+Epoch 29/200
+ - 3s - loss: 1.0369 - acc: 0.5132 - val_loss: 0.9707 - val_acc: 0.5600
+Epoch 30/200
+ - 3s - loss: 1.0359 - acc: 0.5141 - val_loss: 0.9697 - val_acc: 0.5581
+Epoch 31/200
+ - 3s - loss: 1.0361 - acc: 0.5108 - val_loss: 0.9687 - val_acc: 0.5573
+Epoch 32/200
+ - 3s - loss: 1.0360 - acc: 0.5143 - val_loss: 0.9692 - val_acc: 0.5606
+Epoch 33/200
+ - 3s - loss: 1.0356 - acc: 0.5122 - val_loss: 0.9699 - val_acc: 0.5616
+Epoch 34/200
+ - 3s - loss: 1.0364 - acc: 0.5156 - val_loss: 0.9697 - val_acc: 0.5558
+Epoch 35/200
+ - 3s - loss: 1.0357 - acc: 0.5116 - val_loss: 0.9673 - val_acc: 0.5591
+Epoch 36/200
+ - 3s - loss: 1.0355 - acc: 0.5113 - val_loss: 0.9687 - val_acc: 0.5597
+Epoch 37/200
+ - 3s - loss: 1.0344 - acc: 0.5131 - val_loss: 0.9677 - val_acc: 0.5568
+Epoch 38/200
+ - 3s - loss: 1.0340 - acc: 0.5146 - val_loss: 0.9670 - val_acc: 0.5568
+Epoch 39/200
+ - 3s - loss: 1.0338 - acc: 0.5176 - val_loss: 0.9671 - val_acc: 0.5559
+Epoch 40/200
+ - 3s - loss: 1.0342 - acc: 0.5154 - val_loss: 0.9685 - val_acc: 0.5614
+Epoch 41/200
+ - 3s - loss: 1.0338 - acc: 0.5164 - val_loss: 0.9668 - val_acc: 0.5594
+Epoch 42/200
+ - 3s - loss: 1.0335 - acc: 0.5178 - val_loss: 0.9662 - val_acc: 0.5567
+Epoch 43/200
+ - 3s - loss: 1.0334 - acc: 0.5161 - val_loss: 0.9660 - val_acc: 0.5589
+Epoch 44/200
+ - 3s - loss: 1.0339 - acc: 0.5145 - val_loss: 0.9667 - val_acc: 0.5569
+Epoch 45/200
+ - 3s - loss: 1.0331 - acc: 0.5163 - val_loss: 0.9659 - val_acc: 0.5598
+Epoch 46/200
+ - 3s - loss: 1.0317 - acc: 0.5178 - val_loss: 0.9659 - val_acc: 0.5585
+Epoch 47/200
+ - 3s - loss: 1.0327 - acc: 0.5155 - val_loss: 0.9657 - val_acc: 0.5585
+Epoch 48/200
+ - 3s - loss: 1.0330 - acc: 0.5178 - val_loss: 0.9648 - val_acc: 0.5610
+Epoch 49/200
+ - 3s - loss: 1.0323 - acc: 0.5174 - val_loss: 0.9640 - val_acc: 0.5595
+Epoch 50/200
+ - 3s - loss: 1.0308 - acc: 0.5186 - val_loss: 0.9643 - val_acc: 0.5629
+Epoch 51/200
+ - 3s - loss: 1.0325 - acc: 0.5161 - val_loss: 0.9628 - val_acc: 0.5591
+Epoch 52/200
+ - 3s - loss: 1.0316 - acc: 0.5186 - val_loss: 0.9644 - val_acc: 0.5593
+Epoch 53/200
+ - 3s - loss: 1.0296 - acc: 0.5206 - val_loss: 0.9639 - val_acc: 0.5612
+Epoch 54/200
+ - 4s - loss: 1.0313 - acc: 0.5188 - val_loss: 0.9639 - val_acc: 0.5590
+Epoch 55/200
+ - 3s - loss: 1.0307 - acc: 0.5190 - val_loss: 0.9638 - val_acc: 0.5628
+Epoch 56/200
+ - 3s - loss: 1.0310 - acc: 0.5194 - val_loss: 0.9628 - val_acc: 0.5617
+Epoch 57/200
+ - 4s - loss: 1.0301 - acc: 0.5212 - val_loss: 0.9633 - val_acc: 0.5602
+Epoch 58/200
+ - 3s - loss: 1.0304 - acc: 0.5208 - val_loss: 0.9630 - val_acc: 0.5611
+Epoch 59/200
+ - 3s - loss: 1.0299 - acc: 0.5183 - val_loss: 0.9627 - val_acc: 0.5611
+Epoch 60/200
+ - 3s - loss: 1.0296 - acc: 0.5170 - val_loss: 0.9640 - val_acc: 0.5617
+Epoch 61/200
+ - 3s - loss: 1.0290 - acc: 0.5184 - val_loss: 0.9635 - val_acc: 0.5611
+Epoch 62/200
+ - 3s - loss: 1.0288 - acc: 0.5176 - val_loss: 0.9625 - val_acc: 0.5645
+Epoch 63/200
+ - 3s - loss: 1.0297 - acc: 0.5217 - val_loss: 0.9632 - val_acc: 0.5623
+Epoch 64/200
+ - 3s - loss: 1.0290 - acc: 0.5202 - val_loss: 0.9636 - val_acc: 0.5620
+Epoch 65/200
+ - 3s - loss: 1.0278 - acc: 0.5211 - val_loss: 0.9626 - val_acc: 0.5627
+Epoch 66/200
+ - 3s - loss: 1.0292 - acc: 0.5225 - val_loss: 0.9629 - val_acc: 0.5655
+Epoch 67/200
+ - 3s - loss: 1.0286 - acc: 0.5195 - val_loss: 0.9622 - val_acc: 0.5616
+Epoch 68/200
+ - 3s - loss: 1.0278 - acc: 0.5227 - val_loss: 0.9619 - val_acc: 0.5608
+Epoch 69/200
+ - 3s - loss: 1.0287 - acc: 0.5226 - val_loss: 0.9629 - val_acc: 0.5606
+Epoch 70/200
+ - 3s - loss: 1.0260 - acc: 0.5209 - val_loss: 0.9626 - val_acc: 0.5616
+Epoch 71/200
+ - 3s - loss: 1.0257 - acc: 0.5217 - val_loss: 0.9613 - val_acc: 0.5631
+Epoch 72/200
+ - 3s - loss: 1.0268 - acc: 0.5235 - val_loss: 0.9617 - val_acc: 0.5631
+Epoch 73/200
+ - 3s - loss: 1.0270 - acc: 0.5209 - val_loss: 0.9627 - val_acc: 0.5606
+Epoch 74/200
+ - 3s - loss: 1.0275 - acc: 0.5195 - val_loss: 0.9599 - val_acc: 0.5609
+Epoch 75/200
+ - 3s - loss: 1.0266 - acc: 0.5186 - val_loss: 0.9599 - val_acc: 0.5614
+Epoch 76/200
+ - 3s - loss: 1.0262 - acc: 0.5219 - val_loss: 0.9613 - val_acc: 0.5631
+Epoch 77/200
+ - 3s - loss: 1.0255 - acc: 0.5210 - val_loss: 0.9602 - val_acc: 0.5604
+Epoch 78/200
+ - 3s - loss: 1.0261 - acc: 0.5200 - val_loss: 0.9605 - val_acc: 0.5595
+Epoch 79/200
+ - 3s - loss: 1.0244 - acc: 0.5245 - val_loss: 0.9610 - val_acc: 0.5627
+Epoch 80/200
+ - 3s - loss: 1.0245 - acc: 0.5236 - val_loss: 0.9613 - val_acc: 0.5597
+Epoch 81/200
+ - 3s - loss: 1.0244 - acc: 0.5235 - val_loss: 0.9616 - val_acc: 0.5622
+Epoch 82/200
+ - 3s - loss: 1.0240 - acc: 0.5232 - val_loss: 0.9614 - val_acc: 0.5601
+Epoch 83/200
+ - 3s - loss: 1.0256 - acc: 0.5217 - val_loss: 0.9592 - val_acc: 0.5620
+Epoch 84/200
+ - 3s - loss: 1.0236 - acc: 0.5237 - val_loss: 0.9601 - val_acc: 0.5637
+Epoch 85/200
+ - 3s - loss: 1.0238 - acc: 0.5244 - val_loss: 0.9601 - val_acc: 0.5617
+Epoch 86/200
+ - 3s - loss: 1.0227 - acc: 0.5290 - val_loss: 0.9607 - val_acc: 0.5638
+Epoch 87/200
+ - 3s - loss: 1.0232 - acc: 0.5245 - val_loss: 0.9602 - val_acc: 0.5650
+Epoch 88/200
+ - 3s - loss: 1.0242 - acc: 0.5241 - val_loss: 0.9610 - val_acc: 0.5606
+Epoch 89/200
+ - 3s - loss: 1.0230 - acc: 0.5266 - val_loss: 0.9611 - val_acc: 0.5620
+Epoch 90/200
+ - 3s - loss: 1.0225 - acc: 0.5239 - val_loss: 0.9599 - val_acc: 0.5628
+Epoch 91/200
+ - 3s - loss: 1.0233 - acc: 0.5248 - val_loss: 0.9619 - val_acc: 0.5598
+Epoch 92/200
+ - 3s - loss: 1.0224 - acc: 0.5249 - val_loss: 0.9625 - val_acc: 0.5631
+Epoch 93/200
+ - 3s - loss: 1.0230 - acc: 0.5233 - val_loss: 0.9606 - val_acc: 0.5664
+Epoch 94/200
+ - 3s - loss: 1.0224 - acc: 0.5258 - val_loss: 0.9606 - val_acc: 0.5633
+Epoch 95/200
+ - 3s - loss: 1.0218 - acc: 0.5265 - val_loss: 0.9589 - val_acc: 0.5649
+Epoch 96/200
+ - 3s - loss: 1.0229 - acc: 0.5264 - val_loss: 0.9602 - val_acc: 0.5622
+Epoch 97/200
+ - 3s - loss: 1.0215 - acc: 0.5275 - val_loss: 0.9599 - val_acc: 0.5631
+Epoch 98/200
+ - 3s - loss: 1.0222 - acc: 0.5251 - val_loss: 0.9585 - val_acc: 0.5624
+Epoch 99/200
+ - 3s - loss: 1.0220 - acc: 0.5277 - val_loss: 0.9599 - val_acc: 0.5620
+Epoch 100/200
+ - 3s - loss: 1.0209 - acc: 0.5268 - val_loss: 0.9584 - val_acc: 0.5652
+Epoch 101/200
+ - 3s - loss: 1.0202 - acc: 0.5266 - val_loss: 0.9598 - val_acc: 0.5609
+Epoch 102/200
+ - 3s - loss: 1.0203 - acc: 0.5250 - val_loss: 0.9605 - val_acc: 0.5626
+Epoch 103/200
+ - 3s - loss: 1.0195 - acc: 0.5271 - val_loss: 0.9616 - val_acc: 0.5612
+Epoch 104/200
+ - 3s - loss: 1.0196 - acc: 0.5266 - val_loss: 0.9593 - val_acc: 0.5627
+Epoch 105/200
+ - 3s - loss: 1.0212 - acc: 0.5270 - val_loss: 0.9598 - val_acc: 0.5611
+Epoch 106/200
+ - 3s - loss: 1.0206 - acc: 0.5258 - val_loss: 0.9594 - val_acc: 0.5616
+Epoch 107/200
+ - 3s - loss: 1.0194 - acc: 0.5252 - val_loss: 0.9595 - val_acc: 0.5617
+Epoch 108/200
+ - 3s - loss: 1.0199 - acc: 0.5257 - val_loss: 0.9596 - val_acc: 0.5607
+Epoch 109/200
+ - 3s - loss: 1.0189 - acc: 0.5267 - val_loss: 0.9591 - val_acc: 0.5614
+Epoch 110/200
+ - 3s - loss: 1.0186 - acc: 0.5269 - val_loss: 0.9577 - val_acc: 0.5620
+Epoch 111/200
+ - 3s - loss: 1.0195 - acc: 0.5299 - val_loss: 0.9579 - val_acc: 0.5629
+Epoch 112/200
+ - 3s - loss: 1.0183 - acc: 0.5295 - val_loss: 0.9585 - val_acc: 0.5640
+Epoch 113/200
+ - 3s - loss: 1.0188 - acc: 0.5268 - val_loss: 0.9567 - val_acc: 0.5633
+Epoch 114/200
+ - 3s - loss: 1.0183 - acc: 0.5269 - val_loss: 0.9570 - val_acc: 0.5618
+Epoch 115/200
+ - 3s - loss: 1.0178 - acc: 0.5284 - val_loss: 0.9592 - val_acc: 0.5638
+Epoch 116/200
+ - 4s - loss: 1.0168 - acc: 0.5302 - val_loss: 0.9575 - val_acc: 0.5646
+Epoch 117/200
+ - 3s - loss: 1.0171 - acc: 0.5285 - val_loss: 0.9602 - val_acc: 0.5606
+Epoch 118/200
+ - 3s - loss: 1.0175 - acc: 0.5282 - val_loss: 0.9603 - val_acc: 0.5600
+Epoch 119/200
+ - 3s - loss: 1.0176 - acc: 0.5271 - val_loss: 0.9595 - val_acc: 0.5620
+Epoch 120/200
+ - 3s - loss: 1.0182 - acc: 0.5281 - val_loss: 0.9586 - val_acc: 0.5620
+Epoch 121/200
+ - 3s - loss: 1.0170 - acc: 0.5284 - val_loss: 0.9599 - val_acc: 0.5619
+Epoch 122/200
+ - 3s - loss: 1.0156 - acc: 0.5285 - val_loss: 0.9598 - val_acc: 0.5629
+Epoch 123/200
+ - 3s - loss: 1.0163 - acc: 0.5308 - val_loss: 0.9575 - val_acc: 0.5631
+Epoch 124/200
+ - 3s - loss: 1.0164 - acc: 0.5270 - val_loss: 0.9592 - val_acc: 0.5619
+Epoch 125/200
+ - 3s - loss: 1.0165 - acc: 0.5292 - val_loss: 0.9581 - val_acc: 0.5613
+Epoch 126/200
+ - 3s - loss: 1.0153 - acc: 0.5302 - val_loss: 0.9590 - val_acc: 0.5628
+Epoch 127/200
+ - 3s - loss: 1.0150 - acc: 0.5291 - val_loss: 0.9602 - val_acc: 0.5613
+Epoch 128/200
+ - 3s - loss: 1.0156 - acc: 0.5284 - val_loss: 0.9598 - val_acc: 0.5616
+Epoch 129/200
+ - 3s - loss: 1.0153 - acc: 0.5296 - val_loss: 0.9595 - val_acc: 0.5616
+Epoch 130/200
+ - 3s - loss: 1.0144 - acc: 0.5267 - val_loss: 0.9587 - val_acc: 0.5606
+Epoch 131/200
+ - 4s - loss: 1.0139 - acc: 0.5313 - val_loss: 0.9597 - val_acc: 0.5614
+Epoch 132/200
+ - 3s - loss: 1.0147 - acc: 0.5313 - val_loss: 0.9583 - val_acc: 0.5611
+Epoch 133/200
+ - 3s - loss: 1.0151 - acc: 0.5295 - val_loss: 0.9582 - val_acc: 0.5608
+Epoch 134/200
+ - 4s - loss: 1.0141 - acc: 0.5287 - val_loss: 0.9599 - val_acc: 0.5612
+Epoch 135/200
+ - 3s - loss: 1.0138 - acc: 0.5308 - val_loss: 0.9588 - val_acc: 0.5620
+Epoch 136/200
+ - 4s - loss: 1.0132 - acc: 0.5305 - val_loss: 0.9602 - val_acc: 0.5616
+Epoch 137/200
+ - 3s - loss: 1.0143 - acc: 0.5295 - val_loss: 0.9604 - val_acc: 0.5595
+Epoch 138/200
+ - 4s - loss: 1.0125 - acc: 0.5311 - val_loss: 0.9615 - val_acc: 0.5623
+Epoch 139/200
+ - 4s - loss: 1.0126 - acc: 0.5337 - val_loss: 0.9622 - val_acc: 0.5624
+Epoch 140/200
+ - 3s - loss: 1.0122 - acc: 0.5318 - val_loss: 0.9603 - val_acc: 0.5596
+Epoch 141/200
+ - 3s - loss: 1.0115 - acc: 0.5324 - val_loss: 0.9599 - val_acc: 0.5638
+Epoch 142/200
+ - 4s - loss: 1.0134 - acc: 0.5297 - val_loss: 0.9584 - val_acc: 0.5614
+Epoch 143/200
+ - 4s - loss: 1.0127 - acc: 0.5275 - val_loss: 0.9597 - val_acc: 0.5605
+Epoch 144/200
+ - 4s - loss: 1.0114 - acc: 0.5312 - val_loss: 0.9591 - val_acc: 0.5633
+Epoch 145/200
+ - 4s - loss: 1.0111 - acc: 0.5325 - val_loss: 0.9595 - val_acc: 0.5609
+Epoch 146/200
+ - 4s - loss: 1.0108 - acc: 0.5359 - val_loss: 0.9595 - val_acc: 0.5622
+Epoch 147/200
+ - 4s - loss: 1.0119 - acc: 0.5312 - val_loss: 0.9589 - val_acc: 0.5622
+Epoch 148/200
+ - 4s - loss: 1.0110 - acc: 0.5317 - val_loss: 0.9605 - val_acc: 0.5626
+Epoch 149/200
+ - 4s - loss: 1.0113 - acc: 0.5338 - val_loss: 0.9582 - val_acc: 0.5621
+Epoch 150/200
+ - 4s - loss: 1.0120 - acc: 0.5328 - val_loss: 0.9595 - val_acc: 0.5608
+Epoch 151/200
+ - 4s - loss: 1.0103 - acc: 0.5306 - val_loss: 0.9609 - val_acc: 0.5602
+Epoch 152/200
+ - 4s - loss: 1.0086 - acc: 0.5338 - val_loss: 0.9604 - val_acc: 0.5605
+Epoch 153/200
+ - 3s - loss: 1.0092 - acc: 0.5329 - val_loss: 0.9591 - val_acc: 0.5613
+Epoch 154/200
+ - 3s - loss: 1.0098 - acc: 0.5318 - val_loss: 0.9583 - val_acc: 0.5599
+Epoch 155/200
+ - 4s - loss: 1.0086 - acc: 0.5344 - val_loss: 0.9581 - val_acc: 0.5608
+Epoch 156/200
+ - 4s - loss: 1.0080 - acc: 0.5337 - val_loss: 0.9595 - val_acc: 0.5631
+Epoch 157/200
+ - 4s - loss: 1.0087 - acc: 0.5320 - val_loss: 0.9599 - val_acc: 0.5613
+Epoch 158/200
+ - 3s - loss: 1.0077 - acc: 0.5329 - val_loss: 0.9605 - val_acc: 0.5603
+Epoch 159/200
+ - 4s - loss: 1.0060 - acc: 0.5368 - val_loss: 0.9593 - val_acc: 0.5613
+Epoch 160/200
+ - 4s - loss: 1.0087 - acc: 0.5329 - val_loss: 0.9593 - val_acc: 0.5586
+Epoch 161/200
+ - 4s - loss: 1.0092 - acc: 0.5329 - val_loss: 0.9591 - val_acc: 0.5599
+Epoch 162/200
+ - 4s - loss: 1.0076 - acc: 0.5367 - val_loss: 0.9599 - val_acc: 0.5582
+Epoch 163/200
+ - 4s - loss: 1.0081 - acc: 0.5348 - val_loss: 0.9607 - val_acc: 0.5600
+Epoch 164/200
+ - 4s - loss: 1.0076 - acc: 0.5340 - val_loss: 0.9602 - val_acc: 0.5613
+Epoch 165/200
+ - 4s - loss: 1.0062 - acc: 0.5348 - val_loss: 0.9604 - val_acc: 0.5588
+Epoch 166/200
+ - 4s - loss: 1.0079 - acc: 0.5345 - val_loss: 0.9598 - val_acc: 0.5603
+Epoch 167/200
+ - 4s - loss: 1.0043 - acc: 0.5370 - val_loss: 0.9610 - val_acc: 0.5613
+Epoch 168/200
+ - 4s - loss: 1.0052 - acc: 0.5378 - val_loss: 0.9616 - val_acc: 0.5609
+Epoch 169/200
+ - 5s - loss: 1.0053 - acc: 0.5347 - val_loss: 0.9595 - val_acc: 0.5601
+Epoch 170/200
+ - 4s - loss: 1.0073 - acc: 0.5372 - val_loss: 0.9614 - val_acc: 0.5578
+Epoch 171/200
+ - 4s - loss: 1.0057 - acc: 0.5356 - val_loss: 0.9618 - val_acc: 0.5603
+Epoch 172/200
+ - 4s - loss: 1.0059 - acc: 0.5340 - val_loss: 0.9605 - val_acc: 0.5595
+Epoch 173/200
+ - 3s - loss: 1.0045 - acc: 0.5345 - val_loss: 0.9616 - val_acc: 0.5593
+Epoch 174/200
+ - 3s - loss: 1.0040 - acc: 0.5369 - val_loss: 0.9616 - val_acc: 0.5570
+Epoch 175/200
+ - 3s - loss: 1.0041 - acc: 0.5381 - val_loss: 0.9602 - val_acc: 0.5610
+Epoch 176/200
+ - 4s - loss: 1.0048 - acc: 0.5374 - val_loss: 0.9604 - val_acc: 0.5602
+Epoch 177/200
+ - 4s - loss: 1.0064 - acc: 0.5352 - val_loss: 0.9614 - val_acc: 0.5620
+Epoch 178/200
+ - 3s - loss: 1.0033 - acc: 0.5363 - val_loss: 0.9620 - val_acc: 0.5581
+Epoch 179/200
+ - 3s - loss: 1.0036 - acc: 0.5372 - val_loss: 0.9628 - val_acc: 0.5581
+Epoch 180/200
+ - 3s - loss: 1.0025 - acc: 0.5376 - val_loss: 0.9623 - val_acc: 0.5589
+Epoch 181/200
+ - 3s - loss: 1.0038 - acc: 0.5353 - val_loss: 0.9643 - val_acc: 0.5584
+Epoch 182/200
+ - 3s - loss: 1.0024 - acc: 0.5347 - val_loss: 0.9620 - val_acc: 0.5588
+Epoch 183/200
+ - 3s - loss: 1.0030 - acc: 0.5371 - val_loss: 0.9613 - val_acc: 0.5565
+Epoch 184/200
+ - 3s - loss: 1.0022 - acc: 0.5363 - val_loss: 0.9613 - val_acc: 0.5603
+Epoch 185/200
+ - 3s - loss: 1.0024 - acc: 0.5398 - val_loss: 0.9603 - val_acc: 0.5578
+Epoch 186/200
+ - 3s - loss: 1.0024 - acc: 0.5370 - val_loss: 0.9617 - val_acc: 0.5593
+Epoch 187/200
+ - 3s - loss: 1.0018 - acc: 0.5368 - val_loss: 0.9625 - val_acc: 0.5609
+Epoch 188/200
+ - 3s - loss: 1.0016 - acc: 0.5355 - val_loss: 0.9621 - val_acc: 0.5589
+Epoch 189/200
+ - 3s - loss: 1.0042 - acc: 0.5382 - val_loss: 0.9613 - val_acc: 0.5611
+Epoch 190/200
+ - 3s - loss: 1.0009 - acc: 0.5385 - val_loss: 0.9627 - val_acc: 0.5608
+Epoch 191/200
+ - 3s - loss: 1.0024 - acc: 0.5364 - val_loss: 0.9608 - val_acc: 0.5600
+Epoch 192/200
+ - 3s - loss: 1.0015 - acc: 0.5391 - val_loss: 0.9614 - val_acc: 0.5611
+Epoch 193/200
+ - 3s - loss: 1.0001 - acc: 0.5402 - val_loss: 0.9636 - val_acc: 0.5589
+Epoch 194/200
+ - 3s - loss: 1.0017 - acc: 0.5367 - val_loss: 0.9619 - val_acc: 0.5591
+Epoch 195/200
+ - 3s - loss: 0.9989 - acc: 0.5373 - val_loss: 0.9635 - val_acc: 0.5603
+Epoch 196/200
+ - 3s - loss: 1.0011 - acc: 0.5403 - val_loss: 0.9621 - val_acc: 0.5602
+Epoch 197/200
+ - 3s - loss: 0.9998 - acc: 0.5402 - val_loss: 0.9616 - val_acc: 0.5598
+Epoch 198/200
+ - 4s - loss: 0.9983 - acc: 0.5410 - val_loss: 0.9624 - val_acc: 0.5586
+Epoch 199/200
+ - 4s - loss: 0.9998 - acc: 0.5404 - val_loss: 0.9608 - val_acc: 0.5614
+Epoch 200/200
+ - 3s - loss: 0.9985 - acc: 0.5399 - val_loss: 0.9624 - val_acc: 0.5580
+predicted percentages:
+   down_prediction  flat_prediction  up_prediction
+0         0.427687         0.131125       0.441188
+1         0.391110         0.257174       0.351716
+2         0.290595         0.288109       0.421296
+3         0.247265         0.468394       0.284341
+4         0.155495         0.599185       0.245319
+       down_prediction  flat_prediction  up_prediction
+36782         0.181274         0.664225       0.154501
+36783         0.185765         0.614336       0.199898
+36784         0.187125         0.632008       0.180868
+36785         0.219800         0.600141       0.180059
+36786         0.273030         0.505586       0.221383
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 0  x std: 
+Percent correct 0.00_sigma: 55.924299855471624 %
+percentage of periods betting up 0.00_sigma : 55.4027237883 %; percentage of periods betting down: 0.00_sigma  44.5972762117 %; percentage of periods staying out of the market: 0.00_sigma  0.0 %
+There were 16104 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.99.
+The CAGR for 0.00_sigma. is: 25.31 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.62.
+The CAGR for 0.00_sigma. is: 12.81 percent. after commissions
+average_gain: 0.0006832555687157
+average_loss: -0.0007802320888305078
+average_trade: 3.8213137123476624e-05
+
+
+Percent correct 0.20_sigma: 56.42400942518757 %
+percentage of periods betting up 0.20_sigma : 49.2728409492 %; percentage of periods betting down: 0.20_sigma  38.6440862261 %; percentage of periods staying out of the market: 0.20_sigma  12.0830728246 %
+There were 18150 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.76.
+The CAGR for 0.20_sigma. is: 22.28 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.38.
+The CAGR for 0.20_sigma. is: 10.47 percent. after commissions
+average_gain: 0.0007134913203962256
+average_loss: -0.0008349267341586117
+average_trade: 3.875281488473709e-05
+
+
+Percent correct 0.40_sigma: 64.4634102051934 %
+percentage of periods betting up 0.40_sigma : 6.7931606274 %; percentage of periods betting down: 0.40_sigma  8.19854840025 %; percentage of periods staying out of the market: 0.40_sigma  85.0082909724 %
+There were 7349 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.16.
+The CAGR for 0.40_sigma. is: 9.05 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.48.
+The CAGR for 0.40_sigma. is: 6.09 percent. after commissions
+average_gain: 0.0009095989448691888
+average_loss: -0.0013759879302378828
+average_trade: 9.737931265849215e-05
+
+
+Percent correct 0.60_sigma: 77.77777777777779 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0353385706907 %; percentage of periods staying out of the market: 0.60_sigma  99.9510696714 %
+There were 37 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.40.
+The CAGR for 0.60_sigma. is: 0.09 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.35.
+The CAGR for 0.60_sigma. is: 0.08 percent. after commissions
+average_gain: 0.000969941255470206
+average_loss: -0.0019497796020004898
+average_trade: 0.0003211143982544955
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 0.1  x std: 
+Percent correct 0.00_sigma: 55.924299855471624 %
+percentage of periods betting up 0.00_sigma : 55.4027237883 %; percentage of periods betting down: 0.00_sigma  44.5972762117 %; percentage of periods staying out of the market: 0.00_sigma  0.0 %
+There were 16104 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.99.
+The CAGR for 0.00_sigma. is: 25.31 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.62.
+The CAGR for 0.00_sigma. is: 12.81 percent. after commissions
+average_gain: 0.0006832555687157
+average_loss: -0.0007802320888305078
+average_trade: 3.8213137123476624e-05
+
+
+Percent correct 0.20_sigma: 56.42400942518757 %
+percentage of periods betting up 0.20_sigma : 49.2728409492 %; percentage of periods betting down: 0.20_sigma  38.6440862261 %; percentage of periods staying out of the market: 0.20_sigma  12.0830728246 %
+There were 18150 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.76.
+The CAGR for 0.20_sigma. is: 22.28 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.38.
+The CAGR for 0.20_sigma. is: 10.47 percent. after commissions
+average_gain: 0.0007134913203962256
+average_loss: -0.0008349267341586117
+average_trade: 3.875281488473709e-05
+
+
+Percent correct 0.40_sigma: 64.4634102051934 %
+percentage of periods betting up 0.40_sigma : 6.7931606274 %; percentage of periods betting down: 0.40_sigma  8.19854840025 %; percentage of periods staying out of the market: 0.40_sigma  85.0082909724 %
+There were 7349 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.16.
+The CAGR for 0.40_sigma. is: 9.05 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.48.
+The CAGR for 0.40_sigma. is: 6.09 percent. after commissions
+average_gain: 0.0009095989448691888
+average_loss: -0.0013759879302378828
+average_trade: 9.737931265849215e-05
+
+
+Percent correct 0.60_sigma: 77.77777777777779 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0353385706907 %; percentage of periods staying out of the market: 0.60_sigma  99.9510696714 %
+There were 37 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.40.
+The CAGR for 0.60_sigma. is: 0.09 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.35.
+The CAGR for 0.60_sigma. is: 0.08 percent. after commissions
+average_gain: 0.000969941255470206
+average_loss: -0.0019497796020004898
+average_trade: 0.0003211143982544955
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 0.2  x std: 
+Percent correct 0.00_sigma: 55.924299855471624 %
+percentage of periods betting up 0.00_sigma : 55.4027237883 %; percentage of periods betting down: 0.00_sigma  44.5972762117 %; percentage of periods staying out of the market: 0.00_sigma  0.0 %
+There were 16104 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.99.
+The CAGR for 0.00_sigma. is: 25.31 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.62.
+The CAGR for 0.00_sigma. is: 12.81 percent. after commissions
+average_gain: 0.0006832555687157
+average_loss: -0.0007802320888305078
+average_trade: 3.8213137123476624e-05
+
+
+Percent correct 0.20_sigma: 56.42400942518757 %
+percentage of periods betting up 0.20_sigma : 49.2728409492 %; percentage of periods betting down: 0.20_sigma  38.6440862261 %; percentage of periods staying out of the market: 0.20_sigma  12.0830728246 %
+There were 18150 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.76.
+The CAGR for 0.20_sigma. is: 22.28 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.38.
+The CAGR for 0.20_sigma. is: 10.47 percent. after commissions
+average_gain: 0.0007134913203962256
+average_loss: -0.0008349267341586117
+average_trade: 3.875281488473709e-05
+
+
+Percent correct 0.40_sigma: 64.4634102051934 %
+percentage of periods betting up 0.40_sigma : 6.7931606274 %; percentage of periods betting down: 0.40_sigma  8.19854840025 %; percentage of periods staying out of the market: 0.40_sigma  85.0082909724 %
+There were 7349 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.16.
+The CAGR for 0.40_sigma. is: 9.05 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.48.
+The CAGR for 0.40_sigma. is: 6.09 percent. after commissions
+average_gain: 0.0009095989448691888
+average_loss: -0.0013759879302378828
+average_trade: 9.737931265849215e-05
+
+
+Percent correct 0.60_sigma: 77.77777777777779 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0353385706907 %; percentage of periods staying out of the market: 0.60_sigma  99.9510696714 %
+There were 37 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.40.
+The CAGR for 0.60_sigma. is: 0.09 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.35.
+The CAGR for 0.60_sigma. is: 0.08 percent. after commissions
+average_gain: 0.000969941255470206
+average_loss: -0.0019497796020004898
+average_trade: 0.0003211143982544955
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 0.4  x std: 
+Percent correct 0.00_sigma: 55.924299855471624 %
+percentage of periods betting up 0.00_sigma : 55.4027237883 %; percentage of periods betting down: 0.00_sigma  44.5972762117 %; percentage of periods staying out of the market: 0.00_sigma  0.0 %
+There were 16104 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.99.
+The CAGR for 0.00_sigma. is: 25.31 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.62.
+The CAGR for 0.00_sigma. is: 12.81 percent. after commissions
+average_gain: 0.0006832555687157
+average_loss: -0.0007802320888305078
+average_trade: 3.8213137123476624e-05
+
+
+Percent correct 0.20_sigma: 56.42400942518757 %
+percentage of periods betting up 0.20_sigma : 49.2728409492 %; percentage of periods betting down: 0.20_sigma  38.6440862261 %; percentage of periods staying out of the market: 0.20_sigma  12.0830728246 %
+There were 18150 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.76.
+The CAGR for 0.20_sigma. is: 22.28 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.38.
+The CAGR for 0.20_sigma. is: 10.47 percent. after commissions
+average_gain: 0.0007134913203962256
+average_loss: -0.0008349267341586117
+average_trade: 3.875281488473709e-05
+
+
+Percent correct 0.40_sigma: 64.4634102051934 %
+percentage of periods betting up 0.40_sigma : 6.7931606274 %; percentage of periods betting down: 0.40_sigma  8.19854840025 %; percentage of periods staying out of the market: 0.40_sigma  85.0082909724 %
+There were 7349 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.16.
+The CAGR for 0.40_sigma. is: 9.05 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.48.
+The CAGR for 0.40_sigma. is: 6.09 percent. after commissions
+average_gain: 0.0009095989448691888
+average_loss: -0.0013759879302378828
+average_trade: 9.737931265849215e-05
+
+
+Percent correct 0.60_sigma: 77.77777777777779 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0353385706907 %; percentage of periods staying out of the market: 0.60_sigma  99.9510696714 %
+There were 37 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.40.
+The CAGR for 0.60_sigma. is: 0.09 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.35.
+The CAGR for 0.60_sigma. is: 0.08 percent. after commissions
+average_gain: 0.000969941255470206
+average_loss: -0.0019497796020004898
+average_trade: 0.0003211143982544955
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 0.8  x std: 
+Percent correct 0.00_sigma: 55.92189587935314 %
+percentage of periods betting up 0.00_sigma : 55.4054421399 %; percentage of periods betting down: 0.00_sigma  44.5891211569 %; percentage of periods staying out of the market: 0.00_sigma  0.00543670318318 %
+There were 16105 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.99.
+The CAGR for 0.00_sigma. is: 25.29 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.61.
+The CAGR for 0.00_sigma. is: 12.79 percent. after commissions
+average_gain: 0.0006832657490602995
+average_loss: -0.0007802320888305078
+average_trade: 3.818364827139931e-05
+
+
+Percent correct 0.20_sigma: 56.42400942518757 %
+percentage of periods betting up 0.20_sigma : 49.2728409492 %; percentage of periods betting down: 0.20_sigma  38.6440862261 %; percentage of periods staying out of the market: 0.20_sigma  12.0830728246 %
+There were 18150 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.76.
+The CAGR for 0.20_sigma. is: 22.28 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.38.
+The CAGR for 0.20_sigma. is: 10.47 percent. after commissions
+average_gain: 0.0007134913203962256
+average_loss: -0.0008349267341586117
+average_trade: 3.875281488473709e-05
+
+
+Percent correct 0.40_sigma: 64.4634102051934 %
+percentage of periods betting up 0.40_sigma : 6.7931606274 %; percentage of periods betting down: 0.40_sigma  8.19854840025 %; percentage of periods staying out of the market: 0.40_sigma  85.0082909724 %
+There were 7349 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.16.
+The CAGR for 0.40_sigma. is: 9.05 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.48.
+The CAGR for 0.40_sigma. is: 6.09 percent. after commissions
+average_gain: 0.0009095989448691888
+average_loss: -0.0013759879302378828
+average_trade: 9.737931265849215e-05
+
+
+Percent correct 0.60_sigma: 77.77777777777779 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0353385706907 %; percentage of periods staying out of the market: 0.60_sigma  99.9510696714 %
+There were 37 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.40.
+The CAGR for 0.60_sigma. is: 0.09 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.35.
+The CAGR for 0.60_sigma. is: 0.08 percent. after commissions
+average_gain: 0.000969941255470206
+average_loss: -0.0019497796020004898
+average_trade: 0.0003211143982544955
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 1  x std: 
+Percent correct 0.00_sigma: 55.916764393050975 %
+percentage of periods betting up 0.00_sigma : 55.4108788431 %; percentage of periods betting down: 0.00_sigma  44.5782477506 %; percentage of periods staying out of the market: 0.00_sigma  0.0108734063664 %
+There were 16108 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.98.
+The CAGR for 0.00_sigma. is: 25.19 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.60.
+The CAGR for 0.00_sigma. is: 12.70 percent. after commissions
+average_gain: 0.0006831753735694542
+average_loss: -0.0007802445315670905
+average_trade: 3.805252886914679e-05
+
+
+Percent correct 0.20_sigma: 56.42265835736211 %
+percentage of periods betting up 0.20_sigma : 49.2728409492 %; percentage of periods betting down: 0.20_sigma  38.6413678745 %; percentage of periods staying out of the market: 0.20_sigma  12.0857911762 %
+There were 18150 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.76.
+The CAGR for 0.20_sigma. is: 22.26 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.38.
+The CAGR for 0.20_sigma. is: 10.45 percent. after commissions
+average_gain: 0.0007134755764309766
+average_loss: -0.0008349267341586117
+average_trade: 3.872301154287385e-05
+
+
+Percent correct 0.40_sigma: 64.4634102051934 %
+percentage of periods betting up 0.40_sigma : 6.7931606274 %; percentage of periods betting down: 0.40_sigma  8.19854840025 %; percentage of periods staying out of the market: 0.40_sigma  85.0082909724 %
+There were 7349 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.16.
+The CAGR for 0.40_sigma. is: 9.05 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.48.
+The CAGR for 0.40_sigma. is: 6.09 percent. after commissions
+average_gain: 0.0009095989448691888
+average_loss: -0.0013759879302378828
+average_trade: 9.737931265849215e-05
+
+
+Percent correct 0.60_sigma: 77.77777777777779 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0353385706907 %; percentage of periods staying out of the market: 0.60_sigma  99.9510696714 %
+There were 37 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.40.
+The CAGR for 0.60_sigma. is: 0.09 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.35.
+The CAGR for 0.60_sigma. is: 0.08 percent. after commissions
+average_gain: 0.000969941255470206
+average_loss: -0.0019497796020004898
+average_trade: 0.0003211143982544955
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 2  x std: 
+Percent correct 0.00_sigma: 55.897379853009475 %
+percentage of periods betting up 0.00_sigma : 55.3130181858 %; percentage of periods betting down: 0.00_sigma  44.4966972028 %; percentage of periods staying out of the market: 0.00_sigma  0.190284611412 %
+There were 16185 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.97.
+The CAGR for 0.00_sigma. is: 25.06 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.59.
+The CAGR for 0.00_sigma. is: 12.58 percent. after commissions
+average_gain: 0.000683232028337537
+average_loss: -0.0007798927688391753
+average_trade: 3.795565676229168e-05
+
+
+Percent correct 0.20_sigma: 56.40166325327376 %
+percentage of periods betting up 0.20_sigma : 49.2429390817 %; percentage of periods betting down: 0.20_sigma  38.5978742491 %; percentage of periods staying out of the market: 0.20_sigma  12.1591866692 %
+There were 18179 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.74.
+The CAGR for 0.20_sigma. is: 22.07 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.36.
+The CAGR for 0.20_sigma. is: 10.28 percent. after commissions
+average_gain: 0.0007134153043120042
+average_loss: -0.000834699673515498
+average_trade: 3.846292305228466e-05
+
+
+Percent correct 0.40_sigma: 64.45695604794768 %
+percentage of periods betting up 0.40_sigma : 6.7931606274 %; percentage of periods betting down: 0.40_sigma  8.19583004866 %; percentage of periods staying out of the market: 0.40_sigma  85.0110093239 %
+There were 7348 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.16.
+The CAGR for 0.40_sigma. is: 9.03 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.48.
+The CAGR for 0.40_sigma. is: 6.07 percent. after commissions
+average_gain: 0.0009095734726079516
+average_loss: -0.0013759879302378828
+average_trade: 9.721537864335564e-05
+
+
+Percent correct 0.60_sigma: 77.77777777777779 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0353385706907 %; percentage of periods staying out of the market: 0.60_sigma  99.9510696714 %
+There were 37 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.40.
+The CAGR for 0.60_sigma. is: 0.09 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.35.
+The CAGR for 0.60_sigma. is: 0.08 percent. after commissions
+average_gain: 0.000969941255470206
+average_loss: -0.0019497796020004898
+average_trade: 0.0003211143982544955
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 4  x std: 
+Percent correct 0.00_sigma: 55.882010366315306 %
+percentage of periods betting up 0.00_sigma : 53.1464919673 %; percentage of periods betting down: 0.00_sigma  40.49528366 %; percentage of periods staying out of the market: 0.00_sigma  6.35822437274 %
+There were 17458 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 2.50.
+The CAGR for 0.00_sigma. is: 19.94 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 1.10.
+The CAGR for 0.00_sigma. is: 8.15 percent. after commissions
+average_gain: 0.0006828229269760839
+average_loss: -0.0007902012683829117
+average_trade: 3.295426516596075e-05
+
+
+Percent correct 0.20_sigma: 56.255008173338894 %
+percentage of periods betting up 0.20_sigma : 48.7481990921 %; percentage of periods betting down: 0.20_sigma  36.2927120994 %; percentage of periods staying out of the market: 0.20_sigma  14.9590888085 %
+There were 18406 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 2.44.
+The CAGR for 0.20_sigma. is: 19.10 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 1.06.
+The CAGR for 0.20_sigma. is: 7.77 percent. after commissions
+average_gain: 0.0007120067301365411
+average_loss: -0.0008359225542076819
+average_trade: 3.486519121769015e-05
+
+
+Percent correct 0.40_sigma: 64.34251895690771 %
+percentage of periods betting up 0.40_sigma : 6.74151194716 %; percentage of periods betting down: 0.40_sigma  7.97564356974 %; percentage of periods staying out of the market: 0.40_sigma  85.2828444831 %
+There were 7243 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 2.05.
+The CAGR for 0.40_sigma. is: 8.51 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.38.
+The CAGR for 0.40_sigma. is: 5.60 percent. after commissions
+average_gain: 0.0009094071739165347
+average_loss: -0.0013787907437205504
+average_trade: 9.34934352067004e-05
+
+
+Percent correct 0.60_sigma: 86.66666666666667 %
+percentage of periods betting up 0.60_sigma : 0.013591757958 %; percentage of periods betting down: 0.60_sigma  0.0271835159159 %; percentage of periods staying out of the market: 0.60_sigma  99.9592247261 %
+There were 31 total trades for 0.60_sigma.
+The annualised_sharpe for 0.60_sigma. is: 0.73.
+The CAGR for 0.60_sigma. is: 0.14 percent.
+The annualised_sharpe for 0.60_sigma. after commissions is: 0.68.
+The CAGR for 0.60_sigma. is: 0.13 percent. after commissions
+average_gain: 0.0009676290443525295
+average_loss: -0.0019526034593582153
+average_trade: 0.0005782647105244299
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 8  x std: 
+Percent correct 0.00_sigma: 57.953249714937286 %
+percentage of periods betting up 0.00_sigma : 9.27229727893 %; percentage of periods betting down: 0.00_sigma  9.85130616794 %; percentage of periods staying out of the market: 0.00_sigma  80.8763965531 %
+There were 9586 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 0.74.
+The CAGR for 0.00_sigma. is: 2.94 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: -0.13.
+The CAGR for 0.00_sigma. is: -0.62 percent. after commissions
+average_gain: 0.0008063784192931093
+average_loss: -0.0010495903936982543
+average_trade: 2.6003847126018918e-05
+
+
+Percent correct 0.20_sigma: 57.953249714937286 %
+percentage of periods betting up 0.20_sigma : 9.27229727893 %; percentage of periods betting down: 0.20_sigma  9.85130616794 %; percentage of periods staying out of the market: 0.20_sigma  80.8763965531 %
+There were 9586 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 0.74.
+The CAGR for 0.20_sigma. is: 2.94 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: -0.13.
+The CAGR for 0.20_sigma. is: -0.62 percent. after commissions
+average_gain: 0.0008063784192931093
+average_loss: -0.0010495903936982543
+average_trade: 2.6003847126018918e-05
+
+
+Percent correct 0.40_sigma: 62.74667740636327 %
+percentage of periods betting up 0.40_sigma : 2.26710522739 %; percentage of periods betting down: 0.40_sigma  4.49343518091 %; percentage of periods staying out of the market: 0.40_sigma  93.2394595917 %
+There were 3676 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 0.63.
+The CAGR for 0.40_sigma. is: 1.76 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 0.16.
+The CAGR for 0.40_sigma. is: 0.42 percent. after commissions
+average_gain: 0.0009124207912161402
+average_loss: -0.001418755137215772
+average_trade: 4.398030237221107e-05
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 16  x std: 
+Percent correct 0.00_sigma: 75.0 %
+percentage of periods betting up 0.00_sigma : 0.0 %; percentage of periods betting down: 0.00_sigma  0.0108734063664 %; percentage of periods staying out of the market: 0.00_sigma  99.9891265936 %
+There were 9 total trades for 0.00_sigma.
+The annualised_sharpe for 0.00_sigma. is: 0.64.
+The CAGR for 0.00_sigma. is: 0.05 percent.
+The annualised_sharpe for 0.00_sigma. after commissions is: 0.61.
+The CAGR for 0.00_sigma. is: 0.04 percent. after commissions
+average_gain: 0.001
+average_loss: -0.0002298734907526523
+average_trade: 0.0006925316273118369
+
+
+Percent correct 0.20_sigma: 75.0 %
+percentage of periods betting up 0.20_sigma : 0.0 %; percentage of periods betting down: 0.20_sigma  0.0108734063664 %; percentage of periods staying out of the market: 0.20_sigma  99.9891265936 %
+There were 9 total trades for 0.20_sigma.
+The annualised_sharpe for 0.20_sigma. is: 0.64.
+The CAGR for 0.20_sigma. is: 0.05 percent.
+The annualised_sharpe for 0.20_sigma. after commissions is: 0.61.
+The CAGR for 0.20_sigma. is: 0.04 percent. after commissions
+average_gain: 0.001
+average_loss: -0.0002298734907526523
+average_trade: 0.0006925316273118369
+
+
+Percent correct 0.40_sigma: 75.0 %
+percentage of periods betting up 0.40_sigma : 0.0 %; percentage of periods betting down: 0.40_sigma  0.0108734063664 %; percentage of periods staying out of the market: 0.40_sigma  99.9891265936 %
+There were 9 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 0.64.
+The CAGR for 0.40_sigma. is: 0.05 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 0.61.
+The CAGR for 0.40_sigma. is: 0.04 percent. after commissions
+average_gain: 0.001
+average_loss: -0.0002298734907526523
+average_trade: 0.0006925316273118369
+
+
+>FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.001
+return > 32  x std: 
+>Saved model to disk
+[Finished in 3127.8s]
