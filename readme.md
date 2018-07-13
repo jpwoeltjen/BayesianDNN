@@ -62,6 +62,30 @@ average_trade: 2.2571713001966453e-05
 
 The Sharpe ratio of 2.23 is highly statistically significant. After transaction costs the performance is not outstanding but still positive.
 
+
+Upon further inspection the model apparently does poorly on the sort side, with an insignificant Sharpe ratio for short trades. On the contrary, the long side does very well :
+
+```
+FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
+return > 1  x std: 
+Percent correct 0.40_sigma: 65.07554614570302 %
+percentage of periods betting up 0.40_sigma : 50.1156069364 %;
+percentage of periods betting down: 0.40_sigma  0.0 %;
+percentage of periods staying out of the market: 0.40_sigma  49.8843930636 %
+There were 8765 total trades for 0.40_sigma.
+The annualised_sharpe for 0.40_sigma. is: 3.17.
+The CAGR for 0.40_sigma. is: 13.91 percent.
+The annualised_sharpe for 0.40_sigma. after commissions is: 1.95.
+The CAGR for 0.40_sigma. is: 8.29 percent. after commissions
+average_gain: 0.0004436128288106771
+average_loss: -0.0007015657522902119
+average_trade: 4.366546370479117e-05
+```
+![alt text](https://github.com/jpwoeltjen/BayesianDNN/blob/master/Equity_curves/equity_curve_0.40_softmax_1.00_Bayesian_z_score_long_only.png)
+
+The Sharpe ratio of 3.17 is highly statistically significant and even the performance after transaction costs is more than satisfactory. 
+
+
 To check whether the Bayesian NN improves over a NN with standard dropout the model performance over various numbers of stochastic forward passes T is evaluated:
 
 No dropout at test time
