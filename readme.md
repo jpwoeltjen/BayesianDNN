@@ -63,7 +63,7 @@ average_trade: 2.2571713001966453e-05
 The Sharpe ratio of 2.23 is highly statistically significant. After transaction costs the performance is not outstanding but still positive.
 
 
-Upon further inspection the model apparently does poorly on the sort side, with an insignificant Sharpe ratio for short trades. On the contrary, the long side does very well :
+Upon further inspection the model apparently does poorly on the short side, with an insignificant Sharpe ratio for short trades. On the contrary, the long side does very well :
 
 ```
 FOR MODEL: LGS1-EPCHS200-BTCH512-NRNS256-LAY3-BL1_0.00,L2_0.00-KL1_0.00,L2_0.00-RL1_0.00,L2_0.00-LR0.0010-LRD0.0000-DO0.50-PTT0.0005
@@ -84,6 +84,10 @@ average_trade: 4.366546370479117e-05
 ![alt text](https://github.com/jpwoeltjen/BayesianDNN/blob/master/Equity_curves/equity_curve_0.40_softmax_1.00_Bayesian_z_score_long_only.png)
 
 The Sharpe ratio of 3.17 is highly statistically significant and even the performance after transaction costs is more than satisfactory. 
+
+For context, compare this to the asset price series, equivalent of being 100% long 100% of the time):
+![alt text](https://github.com/jpwoeltjen/BayesianDNN/blob/master/Equity_curves/Asset_price_series.png)
+
 
 
 To check whether the Bayesian NN improves over a NN with standard dropout the model performance over various numbers of stochastic forward passes T is evaluated:
