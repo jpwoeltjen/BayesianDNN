@@ -25,21 +25,24 @@ import os
 # np.random.seed(777)
 
 
-def multivariate_ts_to_supervised_extra_lag(data, n_in=1, n_out=1, return_threshold=0, columns=[0,1,2,3]):
+def multivariate_ts_to_supervised_extra_lag(data, ohlc, n_in=1, n_out=1, return_threshold=0):
     """
     Convert series to supervised learning problem. The holding period is assumed to be open to open.
     Alteratively, you may want to hold from open to close. 
     """
     
     df = pd.DataFrame(data)
-    # print(df)
     df.columns = range(df.shape[1])
-    #get open to high/low return, then drop (non differenced) ohlc from df
-    return_min = df.iloc[:,2].shift(-n_out)/df.iloc[:,0].shift(-1)   -1 
-    return_max = df.iloc[:,1].shift(-n_out)/df.iloc[:,0].shift(-1)   -1 
-    df.drop(range(len(columns)),1, inplace=True)
-    # print(df.columns)
-    df.columns = range(1, len(df.columns)+1)
+
+    #get open to high/low return
+    highs = ohlc.iloc[data.index,1]
+    lows = ohlc.iloc[data.index,2]
+    opens = ohlc.iloc[data.index,0]
+
+    return_min = lows.shift(-1)/opens.shift(-1)   -1 
+    return_max = highs.shift(-1)/opens.shift(-1)   -1 
+    
+
     n_vars = df.shape[1]
     cols, names = list(), list()
     # exlude most recent data which, for trading, is not yet available
@@ -64,19 +67,18 @@ def multivariate_ts_to_supervised_extra_lag(data, n_in=1, n_out=1, return_thresh
     agg['return_max'] = return_max
 
     agg['down'] = 0
-    agg.loc[(agg['return_min'] < - return_threshold),'down'] = 1 
+    agg.loc[(lows.shift(-n_out)/opens.shift(-1)   -1  < - return_threshold),'down'] = 1 
 
     agg['flat'] = 0
-    agg.loc[((agg['return_max'] <= return_threshold) & (agg['return_min'] >= - return_threshold)),'flat'] = 1
+    agg.loc[((highs.shift(-n_out)/opens.shift(-1)   -1 <= return_threshold) &\
+     (lows.shift(-n_out)/opens.shift(-1)   -1 >= - return_threshold)),'flat'] = 1
 
     agg['up'] = 0
-    agg.loc[(agg['return_max'] > return_threshold),'up'] = 1 
+    agg.loc[(highs.shift(-n_out)/opens.shift(-1)   -1  > return_threshold),'up'] = 1 
 
     agg.drop('return', 1, inplace=True)
 
-#    agg=agg[agg.index%(n_out)==0]
-#    if dropna:
-#        agg.dropna(inplace=True)
+
         
     agg = agg[n_in:] # drop na at the head
     agg = agg.fillna(0)  #fill the next periods prediction with 0 so no error in scaling is raised
@@ -85,23 +87,18 @@ def multivariate_ts_to_supervised_extra_lag(data, n_in=1, n_out=1, return_thresh
 
 def get_returns(data, columns=[1,2,3,4], dropna=True):
     """
-    Create new DataFrame with ohlc (needed for open-to-high and open-to-low returns)
-     and ohlc.pct_change() and other columns left unchanged.
+    Create new DataFrame with pct_change() applied to specified columns
+    and other columns left unchanged.
     """
 
     cols =  list(data.columns)
     pct_change_cols = []
     data_returns= data.copy(deep=True)
-    ohlc = data_returns.iloc[:,0:4]
-    ohlc.columns = ['o','h', 'l', 'c']
+
 
     for i in columns:
         data_returns[i]=data_returns[i].pct_change()
     
-
-    data_returns = ohlc.join(data_returns)
-
-
     if dropna:
         data_returns.dropna(inplace=True)
         data_returns.replace([np.inf, -np.inf], 0,inplace=True)
@@ -112,8 +109,12 @@ def get_returns(data, columns=[1,2,3,4], dropna=True):
 
 
 
-def fit_model(model, train_X, train_y, val_X, val_y, batch, n_epochs, n_neurons, n_layers, lags, n_features, breg, kreg, rreg, lr, lrd, do):
+def fit_model(model, train_X, train_y, val_X, val_y, batch, n_epochs, n_neurons,\
+ n_layers, lags, n_features, breg, kreg, rreg, lr, lrd, do):
     
+    """
+    Define model and fit it
+    """
     n_obs = n_features*(lags)
 
     tb = TensorBoard(log_dir='./Graph', histogram_freq=0,  
@@ -154,7 +155,12 @@ def fit_model(model, train_X, train_y, val_X, val_y, batch, n_epochs, n_neurons,
     return model, history    
 
 
-def train(model, dataset, train_pct, lags, n_epochs, batch, n_neurons, layers, n_features, breg, kreg, rreg, lr, lrd, do, p_out,rt):
+def train(model, dataset, train_pct, lags, n_epochs, batch,\
+ n_neurons, layers, n_features, breg, kreg, rreg, lr, lrd, do, p_out,rt):
+
+    """
+    Get dataset ready and train model
+    """
     
     n_obs = (n_features)*(lags)
 
@@ -162,10 +168,10 @@ def train(model, dataset, train_pct, lags, n_epochs, batch, n_neurons, layers, n
     
     dataset_returns = get_returns(dataset_returns)#, columns=[1,2,3,4,5,6])
     
-    values = dataset_returns.values.astype('float32')
+    values = dataset_returns#.values.astype('float32')
     values_encoded = values#encode(values)
     
-    reframed = multivariate_ts_to_supervised_extra_lag(values_encoded, lags, p_out,rt)#, columns=[1,2,3,4,5,6])
+    reframed = multivariate_ts_to_supervised_extra_lag(values_encoded,dataset.iloc[:,[0,1,2,3]], lags, p_out,rt)
     print(reframed.head(10))
 
     print("down/flat/up:")
@@ -214,19 +220,24 @@ def train(model, dataset, train_pct, lags, n_epochs, batch, n_neurons, layers, n
     # test_y_normalized = np.array(test_y_normalized, ndmin = 2).T
     
     # fit the model
-    fitted_model, history = fit_model(model, train_X, train_y_normalized, test_X, test_y_normalized, batch, n_epochs, n_neurons, layers, lags, n_features, breg, kreg, rreg, lr, lrd, do)
+    fitted_model, history = fit_model(model, train_X, train_y_normalized, test_X, test_y_normalized,
+     batch, n_epochs, n_neurons, layers, lags, n_features, breg, kreg, rreg, lr, lrd, do)
 
-    return test_X, test_y, periodic_return, low_return, high_return, fitted_model,#, train_y_mean, train_y_std#meanerror_scores,train_loss.mean(axis=1), test_loss.mean(axis=1), lstm_model, lags, batch, scaling_method
+    return test_X, test_y, periodic_return, low_return, high_return, fitted_model,#, train_y_mean, train_y_std
 
 def out_of_sample_test(test_X, test_y, periodic_return, low_return, high_return,  model):#train_y_mean, train_y_std,
+    """
+    Get OOS predictions, set mc_dropout = True to perform MC dropout at test time
+    """
 
     
-    mc_dropout = True
+    mc_dropout = False
 
     if mc_dropout == True:
         ### MC Dropout
-        T = 1000
-        # We want to use Dropout at test time, not just at training time as usual. To do this we tell Keras to predict with learning_phase set to true.  
+        T = 200
+        # We want to use Dropout at test time, not just at training time as usual.
+        # To do this we tell Keras to predict with learning_phase set to true.  
         predict_stochastic = K.function([model.layers[0].input, K.learning_phase()], [model.layers[-1].output])
 
         Y_hat = np.array([predict_stochastic([test_X, 1]) for _ in range(T)])
@@ -252,7 +263,6 @@ def out_of_sample_test(test_X, test_y, periodic_return, low_return, high_return,
     output_df['down_prediction_std'] = pd.Series(yhat_std[:,0])
     output_df['flat_prediction_std'] = pd.Series(yhat_std[:,1])
     output_df['up_prediction_std'] = pd.Series(yhat_std[:,2])
-    # output_df['return']=pd.Series(y_inverted)#reframed['return']
     output_df['down_actual'] = pd.Series(test_y[:,0])
     output_df['flat_actual'] = pd.Series(test_y[:,1])
     output_df['up_actual'] = pd.Series(test_y[:,2])
@@ -263,10 +273,13 @@ def out_of_sample_test(test_X, test_y, periodic_return, low_return, high_return,
 
     # return dataset_returns with OOS predictions
     return output_df
-def equity_curve(dataset, m, periods_in_year, plot, softmax_threshold, profit_taking_threshold, bayesian_threshold):
-
-    dataset.dropna(inplace=True)
+def equity_curve(dataset, m, periods_in_year, plot, softmax_threshold, profit_taking_threshold, bayesian_threshold, p_out):
+    """
+    Compute equity curves and trade statistics
+    """
     transaction_cost = 2/100000
+    dataset.dropna(inplace=True)
+    
     
     print("predicted percentages:")
     print(dataset[['down_prediction','flat_prediction','up_prediction']].head())
@@ -278,76 +291,168 @@ def equity_curve(dataset, m, periods_in_year, plot, softmax_threshold, profit_ta
         print('>FOR MODEL: %s' %m)
         print("return > %s  x std: "%p)
 
-        # loop over softmax threshold. The softmax output can provide information about the strength of the trading signal. However, it can be very high even if the cofidence of the network is low
-        # this is the reason we need a Bayesian uncertainty.
+        # loop over softmax threshold. The softmax output can provide information about the strength of the
+        # trading signal. However, it can be very high even if the cofidence of the network
+        # is low this is the reason we need a Bayesian uncertainty.
         for i in softmax_threshold:
             # if prediction confidence is less than p*std ignore prediction as it is deemed not stat significant
             dataset.loc[(dataset['down_prediction'] < p*dataset['down_prediction_std']), 'down_prediction'] = 0 
             dataset.loc[(dataset['up_prediction'] < p*dataset['up_prediction_std']),'up_prediction'] = 0 
 
             #get signal according to softmax output
-            dataset['signal_%.2f_sigma' %i] = 0#
-            dataset.loc[(dataset['down_prediction'] > i) & (dataset['up_prediction'] <  dataset['down_prediction']), 'signal_%.2f_sigma' %i] = -1
-            dataset.loc[(dataset['up_prediction'] > i) & (dataset['up_prediction'] >  dataset['down_prediction']),'signal_%.2f_sigma' %i] = 1
+            dataset['signal_%.2f_sigma' %i] = 0
+
+            dataset.loc[(dataset['down_prediction'] > i) & (dataset['up_prediction'] < \
+            	dataset['down_prediction']), 'signal_%.2f_sigma' %i] = -1
+
+            dataset.loc[(dataset['up_prediction'] > i) & (dataset['up_prediction'] >  \
+            	dataset['down_prediction']),'signal_%.2f_sigma' %i] = 1
 
 
             dataset['signal_%.2f_sigma' %i]=dataset['signal_%.2f_sigma' %i].fillna(0)
+            dataset.reset_index(drop=True, inplace=True)
 
-            #trading result with profit taking threshold, if no profit taking is triggered, trade result = periodic return
-            dataset['trade_result_%.2f_sigma' %i]=dataset['periodic_return']*dataset['signal_%.2f_sigma' %i]
-            dataset.loc[(dataset['signal_%.2f_sigma' %i]==1) & (dataset['high_return'] > profit_taking_threshold), 'trade_result_%.2f_sigma' %i] = profit_taking_threshold
-            dataset.loc[(dataset['signal_%.2f_sigma' %i]==-1) & ((dataset['low_return'] < - profit_taking_threshold)) , 'trade_result_%.2f_sigma' %i] = profit_taking_threshold
+            long_value = np.zeros(shape=dataset.shape[0])
+            short_value = np.zeros(shape=dataset.shape[0])
+            profit_taking_long = np.zeros(shape=dataset.shape[0])
+            profit_taking_short = np.zeros(shape=dataset.shape[0])
+            trade_result = np.zeros(shape=dataset.shape[0])
+            time_in_long = np.zeros(shape=dataset.shape[0])
+            time_in_short = np.zeros(shape=dataset.shape[0])
+            trade = np.zeros(shape=dataset.shape[0])
+            long_trade_return = np.zeros(shape=dataset.shape[0])
+            short_trade_return = np.zeros(shape=dataset.shape[0])
 
-            dataset['trade_%.2f_sigma' %i]= (dataset['signal_%.2f_sigma' %i].shift(1)!=dataset['signal_%.2f_sigma' %i]).astype(int)
+            # the next snippet implements the trading logic
+            for j in dataset.index:
+                if  short_value[j]==0:
+                    if (dataset['signal_%.2f_sigma' %i][j] == 1) and (long_value[j]==0):
+                        long_value[j] = 1
+                        time_in_long[j] = 1
+                        trade[j] = trade[j]+1
+                        
+                    if long_value[j]!=0:
+                        if long_value[j]*(1+dataset['high_return'][j])>(1+profit_taking_threshold):
+                            profit_taking_long[j] = 1 
+                            trade[j] = trade[j]+1
+                            trade_result[j] = (1+profit_taking_threshold-long_value[j])/long_value[j]
+                            long_trade_return[j] = profit_taking_threshold
+                            if j != dataset.index[-1]: long_value[j+1] = 0
+                            
+                        else:
+                            trade_result[j] = dataset['periodic_return'][j]
+                            if j != dataset.index[-1]:
+                                
+                                if time_in_long[j] == p_out:
+                                    long_value[j+1] = 0 
+                                    time_in_long[j+1] = 0
+                                    trade[j+1] = trade[j+1]+1
+                                    long_trade_return[j] = long_value[j]*(1+dataset['periodic_return'][j]) -1
+                                else:
+                                    long_value[j+1] = long_value[j]*(1+dataset['periodic_return'][j])
+                                    time_in_long[j+1] = time_in_long[j]+1
+                                
+                if long_value[j]==0:
+                    if (dataset['signal_%.2f_sigma' %i][j] == -1) and (short_value[j]==0):
+                        short_value[j] = 1
+                        time_in_short[j] = 1
+                        trade[j] = trade[j]+1
+                        
+                    if short_value[j]!=0:
+                        if short_value[j]*(1-dataset['low_return'][j])>(1+profit_taking_threshold):
+                            profit_taking_short[j] = 1 
+                            trade[j] = trade[j]+1
+                            trade_result[j] = (1+profit_taking_threshold-short_value[j])/short_value[j]
+                            short_trade_return[j] = profit_taking_threshold
+                            if j != dataset.index[-1]: short_value[j+1] = 0
+                            
+                        else:
+                            trade_result[j] = -dataset['periodic_return'][j]
+                            if j != dataset.index[-1]:
+                                
+                                if time_in_short[j] == p_out:
+                                    short_value[j+1] = 0 
+                                    time_in_short[j+1] = 0
+                                    trade[j+1] = trade[j+1]+1
+                                    short_trade_return[j] = short_value[j]*(1-dataset['periodic_return'][j]) -1
+                                else:
+                                    short_value[j+1] = short_value[j]*(1-dataset['periodic_return'][j])
+                                    time_in_short[j+1] = time_in_short[j]+1
+
+
+            dataset['long_value_%.2f_sigma' %i] = long_value
+            dataset['short_value_%.2f_sigma' %i] = short_value
+            dataset['profit_taking_long_%.2f_sigma' %i] =profit_taking_long
+            dataset['profit_taking_short_%.2f_sigma' %i] =profit_taking_short
+            dataset['trade_result_%.2f_sigma' %i] =trade_result
+            dataset['time_in_long_%.2f_sigma' %i] =time_in_long
+            dataset['time_in_short_%.2f_sigma' %i] =time_in_short
+            dataset['trade_%.2f_sigma' %i]= trade 
+            dataset['long_trade_return_%.2f_sigma' %i]=long_trade_return
+            dataset['short_trade_return_%.2f_sigma' %i]=short_trade_return
+            dataset['total_trade_return_%.2f_sigma' %i]=dataset['long_trade_return_%.2f_sigma' %i]+ \
+                dataset['short_trade_return_%.2f_sigma' %i]
+
+          
             dataset['equity_curve_%.2f_sigma' %i]=(dataset['trade_result_%.2f_sigma' %i]+1).cumprod()
+            dataset['noncomp_curve_%.2f_sigma' %i]=(dataset['trade_result_%.2f_sigma' %i]).cumsum()
 
-            dataset['noncomp_curve_%.2f_sigma' %i]=(dataset['trade_result_%.2f_sigma' %i]).cumsum()   
+            # compute transaction costs taking into account that if profit taking is triggered, two trades happend. 
+            dataset['trade_result_%.2f_sigma_after_tc' %i] = (dataset['trade_result_%.2f_sigma' %i]+1) * \
+            (1.0-transaction_cost*dataset['trade_%.2f_sigma' %i]) -1
+            dataset['equity_curve_%.2f_sigma_after_tc' %i]=(dataset['trade_result_%.2f_sigma_after_tc' %i]+1).cumprod()
 
             # compute the percentage of correct predictions 
             dataset['correct_prediction_%.2f_sigma' %i]= None 
-            dataset.loc[dataset['trade_result_%.2f_sigma' %i]>0, 'correct_prediction_%.2f_sigma' %i] = 1
-            dataset.loc[dataset['trade_result_%.2f_sigma' %i]<0, 'correct_prediction_%.2f_sigma' %i] = 0
-
-            # compute transaction costs taking into account that if profit taking is triggered, two trades happend even if next period position is on the same side. 
-            dataset['trade_result_%.2f_sigma_after_tc' %i] = dataset['trade_result_%.2f_sigma' %i]
-            dataset.loc[(dataset['signal_%.2f_sigma' %i] + dataset['signal_%.2f_sigma' %i].shift(1)).abs()==1 , 'trade_result_%.2f_sigma_after_tc' %i] = (dataset['trade_result_%.2f_sigma' %i]+1) * (1.0-transaction_cost*dataset['trade_%.2f_sigma' %i]) -1
-            dataset.loc[(dataset['signal_%.2f_sigma' %i] + dataset['signal_%.2f_sigma' %i].shift(1))==0,'trade_result_%.2f_sigma_after_tc' %i] = (dataset['trade_result_%.2f_sigma' %i]+1) * (1.0-2*transaction_cost*dataset['trade_%.2f_sigma' %i]) -1
-            dataset.loc[((dataset['signal_%.2f_sigma' %i] + dataset['signal_%.2f_sigma' %i].shift(1))==2) & (dataset['high_return'].shift(1) > profit_taking_threshold) , 'trade_result_%.2f_sigma_after_tc' %i] = (dataset['trade_result_%.2f_sigma' %i]+1) * (1.0-2*transaction_cost*dataset['trade_%.2f_sigma' %i]) -1
-            dataset.loc[((dataset['signal_%.2f_sigma' %i] + dataset['signal_%.2f_sigma' %i].shift(1))==-2) & (dataset['low_return'] < - profit_taking_threshold) , 'trade_result_%.2f_sigma_after_tc' %i] = (dataset['trade_result_%.2f_sigma' %i]+1) * (1.0-2*transaction_cost*dataset['trade_%.2f_sigma' %i]) -1
-            # dataset['trade_result_%.2f_sigma_after_tc' %i] = (dataset['trade_result_%.2f_sigma' %i]+1) * (1.0-transaction_cost*dataset['trade_%.2f_sigma' %i]) -1
-            dataset['equity_curve_%.2f_sigma_after_tc' %i]=(dataset['trade_result_%.2f_sigma_after_tc' %i]+1).cumprod()
-
-            
+            dataset.loc[dataset['total_trade_return_%.2f_sigma' %i]>0, 'correct_prediction_%.2f_sigma' %i] = 1
+            dataset.loc[dataset['total_trade_return_%.2f_sigma' %i]<0, 'correct_prediction_%.2f_sigma' %i] = 0
 
             #If there are any trades at all, calculate some statistics.
             if (len(dataset['correct_prediction_%.2f_sigma' %i].dropna()))>0:
 
-                pct_correct = sum(dataset['correct_prediction_%.2f_sigma' %i].dropna())/len(dataset['correct_prediction_%.2f_sigma' %i].dropna())
-                print('Percent correct %.2f_sigma: ' %i + str((pct_correct)*100)+" %")
+                pct_correct = sum(dataset['correct_prediction_%.2f_sigma' %i].dropna())/\
+                len(dataset['correct_prediction_%.2f_sigma' %i].dropna())
+                print('Win rate %.2f_sigma: ' %i + str((pct_correct)*100)+" %")
 
 
                 # Does the model have a long or short bias?
-                percent_betting_up = dataset['signal_%.2f_sigma' %i][dataset['signal_%.2f_sigma' %i]>0].sum()/len(dataset['signal_%.2f_sigma' %i])#[dataset['signal_%.2f_sigma' %i]!=0])
-                percent_betting_down = -dataset['signal_%.2f_sigma' %i][dataset['signal_%.2f_sigma' %i]<0].sum()/len(dataset['signal_%.2f_sigma' %i])#[dataset['signal_%.2f_sigma' %i]!=0])
+                percent_betting_up = dataset['signal_%.2f_sigma' %i][dataset['signal_%.2f_sigma' %i]>0].sum()/\
+                len(dataset['signal_%.2f_sigma' %i])
+                percent_betting_down = -dataset['signal_%.2f_sigma' %i][dataset['signal_%.2f_sigma' %i]<0].sum()/\
+                len(dataset['signal_%.2f_sigma' %i])
                 out_of_market = 1.00 - (percent_betting_up + percent_betting_down)
-                print('percentage of periods betting up %.2f_sigma : ' %(i)+str(percent_betting_up*100)+' %'
-                      +'; percentage of periods betting down: %.2f_sigma  ' %i+str(percent_betting_down*100)+' %'
-                      +'; percentage of periods staying out of the market: %.2f_sigma  ' %i+str(out_of_market*100)+' %')
+                print('Percentage of periods betting up %.2f_sigma : ' %(i)+str(percent_betting_up*100)+' %\n'
+                      +'Percentage of periods betting down: %.2f_sigma  ' %i+str(percent_betting_down*100)+' %\n'
+                      +'Percentage of periods staying out of the market: %.2f_sigma  ' %i+str(out_of_market*100)+' %\n')
                 
                 #How many trades were there
                 total_trades = dataset['trade_%.2f_sigma' %i].sum()
                 print('There were %s total trades for %.2f_sigma.' %(total_trades, i))
-                print('The annualised_sharpe for %.2f_sigma. is: %.2f.' %(i, annualised_sharpe(dataset['trade_result_%.2f_sigma' %i], periods_in_year)))
-                print('The CAGR for %.2f_sigma. is: %.2f percent.' %(i, annual_return(dataset['equity_curve_%.2f_sigma' %i],periods_in_year)*100))
+                print('The annualised_sharpe for %.2f_sigma. is: %.2f.' %\
+                	(i, annualised_sharpe(dataset['trade_result_%.2f_sigma' %i], periods_in_year)))
+                print('The CAGR for %.2f_sigma. is: %.2f percent.' %\
+                	(i, annual_return(dataset['equity_curve_%.2f_sigma' %i],periods_in_year)*100))
 
-                print('The annualised_sharpe for %.2f_sigma. after commissions is: %.2f.' %(i, annualised_sharpe(dataset['trade_result_%.2f_sigma_after_tc' %i], periods_in_year)))
-                print('The CAGR for %.2f_sigma. is: %.2f percent. after commissions' %(i, annual_return(dataset['equity_curve_%.2f_sigma_after_tc' %i],periods_in_year)*100))
+                print('The annualised_sharpe for %.2f_sigma. after commissions is: %.2f.' %\
+                	(i, annualised_sharpe(dataset['trade_result_%.2f_sigma_after_tc' %i], periods_in_year)))
+                print('The CAGR for %.2f_sigma. is: %.2f percent. after commissions' %\
+                	(i, annual_return(dataset['equity_curve_%.2f_sigma_after_tc' %i],periods_in_year)*100))
 
-                average_gain = (dataset['trade_result_%.2f_sigma' %i][dataset['trade_result_%.2f_sigma' %i]>0]).mean()
-                average_loss = (dataset['trade_result_%.2f_sigma' %i][dataset['trade_result_%.2f_sigma' %i]<0]).mean()
-                print('average_gain: ' +str(average_gain))
-                print('average_loss: ' +str(average_loss))
-                print('average_trade: ' +str((dataset['trade_result_%.2f_sigma' %i][dataset['trade_result_%.2f_sigma' %i]!=0]).mean()))
+                average_gain = (dataset['total_trade_return_%.2f_sigma' %i][dataset['total_trade_return_%.2f_sigma' %i]>0]).mean()
+                average_loss = (dataset['total_trade_return_%.2f_sigma' %i][dataset['total_trade_return_%.2f_sigma' %i]<0]).mean()
+                print('Average winning trade: ' +str(average_gain))
+                print('Average losing trade: ' +str(average_loss))
+                print('Average trade: ' + \
+                    str((dataset['total_trade_return_%.2f_sigma' %i][dataset['total_trade_return_%.2f_sigma' %i]!=0]).mean()))
+                print('Average long trade: ' + \
+                    str(dataset['long_trade_return_%.2f_sigma' %i][dataset['long_trade_return_%.2f_sigma' %i]!=0].mean()))
+                print('Average short trade: ' + \
+                    str(dataset['short_trade_return_%.2f_sigma' %i][dataset['short_trade_return_%.2f_sigma' %i]!=0].mean()))
+                print('Average time in long trade: ' + \
+                    str((dataset['time_in_long_%.2f_sigma' %i][dataset['time_in_long_%.2f_sigma' %i]!=0]).mean()))
+                print('Average time in short trade: ' + \
+                    str((dataset['time_in_short_%.2f_sigma' %i][dataset['time_in_short_%.2f_sigma' %i]!=0]).mean()))
+
                 print("\n")
 
                 if plot:
@@ -369,15 +474,12 @@ def equity_curve(dataset, m, periods_in_year, plot, softmax_threshold, profit_ta
     return dataset
 
 def annualised_sharpe(returns, periods_in_year):
-    '''
+    """
     Assumes daily returns are supplied. If not change periods in year.
-    '''
-    
-    # periods_in_year = 368751#252
+    """
     return np.sqrt(periods_in_year) * returns.mean() / returns.std()
 
 def annual_return(equity_curve, periods_in_year):
-    # periods_in_year = 368751#252
     return equity_curve.values[-1]**(periods_in_year/len(equity_curve))-1
     
 

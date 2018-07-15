@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from keras.regularizers import L1L2
-import bayesian_mlp_classification as nn
+import bayesian_mlp_classification_n_out as nn
 import os 
 import keras
 from keras.models import model_from_yaml
@@ -14,7 +14,7 @@ from keras.models import model_from_yaml
 directory = os.path.dirname(os.path.abspath(__file__))
 file = '/data/TRAIN_60m_EURUSD_2003-2014_midpoint.csv'
 path = directory + file
-# path = '/Users/jan/Desktop/dukascopy_data_processed/...'
+# path = '/Users/jan/Desktop/intraday_data/stats_@ES#C_60m.csv'
 output_dir = directory +'/output/'#output directory. 
 #format: date,open,high,low,close,volume,other, format of date  doesn't matter because
 # it's removed in the next step anyway but date has to be ascending. 
@@ -32,7 +32,7 @@ n_lags = [1]#lookback window length
 n_features = len(dataset.columns) # How many features are there?
 # List of **differenced** epochs. For specific value, for example 300, set to [300].
 # If you want to test 300 and 600 epochs set to [300, 300]. (600=300+300)
-n_epochs = [200]
+n_epochs = [100,100]
 n_batch = [512]# Batch size
 n_neurons = [256]# List of number of neurons for each layer. 
 n_hidden_dense_layers = [3]# >=0
@@ -47,7 +47,7 @@ dropout = [0.5]
 return_threshold = [0.001]#,0.001
 threshold = [0,0.2,0.4,0.6,0.8,0.9]#softmax treshold
 bayesian_threshold = [0,0.1,0.2,0.4,0.8,1,2,4,8,16,32]
-p_out = 1#6*3#12*6#how many periods out do you want to perdict?
+p_out = 3#6*3#12*6#how many periods out do you want to perdict?
 plot=False
 
 
@@ -103,9 +103,11 @@ for lags in n_lags:
                                                 out_of_sample_dataset = nn.out_of_sample_test(test_X,test_y,
                                                     periodic_return,low_return,high_return,models[name])
                                                 equity_curve_data = nn.equity_curve(out_of_sample_dataset,
-                                                    name, periods_in_year,plot, threshold, rt, bayesian_threshold)
+                                                    name, periods_in_year,plot, threshold, rt,
+                                                    bayesian_threshold, p_out)
                                                 # save equity curve for further analysis
-                                                # equity_curve_data.to_csv('%s%s_equity_curve.csv' %(output_dir,name),
+                                                # equity_curve_data.to_csv('%s%s_equity_curve.csv' \
+                                                # %(output_dir,name),
                                                  # header = True, index=True, encoding='utf-8')
                                                 model_yaml = models[name].to_yaml()
                                                 with open('%s%s.yaml' %(output_dir,name), "w") as yaml_file:
