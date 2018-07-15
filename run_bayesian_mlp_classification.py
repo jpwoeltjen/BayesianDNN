@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from keras.regularizers import L1L2
-import bayesian_mlp_classification_n_out as nn
+import bayesian_mlp_classification as nn
 import os 
 import keras
 from keras.models import model_from_yaml
