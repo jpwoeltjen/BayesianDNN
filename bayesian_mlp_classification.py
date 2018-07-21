@@ -67,14 +67,14 @@ def multivariate_ts_to_supervised_extra_lag(data, ohlc, n_in=1, n_out=1, return_
     agg['return_max'] = return_max
 
     agg['down'] = 0
-    agg.loc[(lows.shift(-n_out)/opens.shift(-1)   -1  < - return_threshold),'down'] = 1 
+    agg.loc[(lows.shift(-n_out).rolling(n_out).min()/opens.shift(-1)   -1  < - return_threshold),'down'] = 1 
 
     agg['flat'] = 0
-    agg.loc[((highs.shift(-n_out)/opens.shift(-1)   -1 <= return_threshold) &\
-     (lows.shift(-n_out)/opens.shift(-1)   -1 >= - return_threshold)),'flat'] = 1
+    agg.loc[((highs.shift(-n_out).rolling(n_out).max()/opens.shift(-1)   -1 <= return_threshold) &\
+     (lows.shift(-n_out).rolling(n_out).min()/opens.shift(-1)   -1 >= - return_threshold)),'flat'] = 1
 
     agg['up'] = 0
-    agg.loc[(highs.shift(-n_out)/opens.shift(-1)   -1  > return_threshold),'up'] = 1 
+    agg.loc[(highs.shift(-n_out).rolling(n_out).max()/opens.shift(-1)   -1  > return_threshold),'up'] = 1 
 
     agg.drop('return', 1, inplace=True)
 
